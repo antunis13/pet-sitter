@@ -1,10 +1,16 @@
-import Header from "@/components/Header"
+import { Container } from "@mui/material"
+
+import Header from "@/components/Header/Header"
+import Footer from "@/components/Footer"
 
 const Default = ({children}) =>{
     return(
         <>
             <Header/>
-            {children}
+            <Container maxWidth='lg'>
+                {children}
+            </Container>
+            <Footer />
         </>
     )
 }
