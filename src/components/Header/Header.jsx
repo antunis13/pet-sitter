@@ -9,79 +9,84 @@ import{
 } from '@mui/material' 
 import { Container, Grid } from '@mui/material'
 
-import logo from '../../public/images/logo.png'
+import logo from '../../public/images/Logotipo_Jeni-08.png'
 
 import {styled} from '@mui/material/styles'
 
+
 const HeaderGrid = styled(Grid)(({theme}) =>({
     alignItems: 'center',
-    marginLeft: theme.spacing(45)
+    marginLeft: theme.spacing(25),
+
 }))
 
+const HeaderAppBar = styled(AppBar)({
+    display: 'flex',
+    justifyContent: 'center',
+
+})
+
+const TypographyStyle = styled(Typography)`
+    &:hover{
+        color:  ${(props) => props.theme.palette.secondary.main};
+    }
+`
+
 const Header = () => {
-    
     return(
-        
-        <AppBar position="static" elevation={0}  sx={{height: '80px'}}>
-            <Container maxWidth='lg'>
+        <HeaderAppBar position="static" elevation={0}  sx={{height: '100px'}}>
+            <Container maxWidth='md'>
                 <Toolbar>
-                    <HeaderGrid container spacing={6}>
-                        <Grid item >
+                    <HeaderGrid 
+                        container 
+                        xs={9}
+                        display='flex'
+                        justifyContent='space-around'
+                    >
+                        <Grid item xs={2}>
                             <Link href="/">
-                                <Typography variant="h6" component="div" color='primary.light' sx={{ flexGrow: 1 }}>
+                                <TypographyStyle variant="h6" component="div" color='primary.pink' sx={{ flexGrow: 1 }}>
                                     Home
-                                </Typography>
+                                </TypographyStyle>
                             </Link>
                         </Grid>
                 
-                        <Grid item >
+                        <Grid item  xs={2}>
                             <Link href="/about">
-                                <Typography variant="h6" component="div" color='primary.light' sx={{ flexGrow: 1 }}>
+                                <TypographyStyle variant="h6" component="div" color='primary.pink' sx={{ flexGrow: 1 }}>
                                     Sobre nós
-                                </Typography>
+                                </TypographyStyle>
                             </Link>
                         </Grid>
                 
-                        <Grid item >
+                        <Grid item  xs={2} textAlign='center'>
                             <Image
                                 alt='Logo'
                                 src={logo}
-                                width={30}
-                                height={30}
+                                width={90}
+                                height={90}
                             />  
                         </Grid>
                     
-                        <Grid item >
+                        <Grid item  xs={2}>
                             <Link href="/services">
-                                <Typography variant="h6" component="div" color='primary.light' sx={{ flexGrow: 1 }}>
+                                <TypographyStyle variant="h6" component="div" color='primary.pink' sx={{ flexGrow: 1 }}>
                                     Serviços
-                                </Typography>
+                                </TypographyStyle>
                             </Link>
                         </Grid>
                     
-                        <Grid item >  
+                        <Grid item  xs={2}>  
                             <Link href="/contact">
-                                <Typography variant="h6" component="div" color='primary.light' sx={{ flexGrow: 1 }}>
+                                <TypographyStyle variant="h6" component="div" color='primary.pink' sx={{ flexGrow: 1 }}>
                                     Contato
-                                </Typography>
+                                </TypographyStyle>
                             </Link>
                         </Grid>
                     </HeaderGrid> 
-                    <Grid container spacing={1}>
-                        <Grid item >  
-                            <a href="https://wa.me/5511992673254" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-brands fa-square-whatsapp fa-xl" style={{color: 'rgb(23, 64, 113)'}}></i>
-                            </a>
-                        </Grid>
-                        <Grid item >  
-                            <a href="https://www.instagram.com/jenipetsitter/">
-                                <i class="fa-brands fa-square-instagram fa-xl" style={{color: 'rgb(23, 64, 113)'}}></i>
-                            </a>
-                        </Grid>
-                    </Grid>
                 </Toolbar>
             </Container>
-        </AppBar>  
+        </HeaderAppBar>  
 
     )
 }

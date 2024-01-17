@@ -3,14 +3,15 @@ import { createTheme } from "@mui/material"
 const theme = createTheme({
     palette: {
         primary: {
-            main: 'rgb(237, 122, 140)',
-            light: '#ffffff'
+            main: '#fcfcfc',
+            pink: 'rgb(237, 122, 140)'
         },
         secondary: {
             main: 'rgb(23, 64, 113)',
         },
-        third: {
-            main: '#f8e9e9f'
+        background: {
+            main: '#efd9db',
+            dark: '#e5c7c5',
         },
     },
     spacing: 4,
