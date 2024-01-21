@@ -1,62 +1,30 @@
+
 import Image from "next/image"
 import { 
   Grid, 
   Typography,
-  Container,
   Paper,
   Avatar,
 } from "@mui/material"
 
+import BackgroundGrid from "@/components/BackgroundGrid"
+import Background from '../public/images/Portfolio_Jeni07.jpg'
+
 import Carousel from 'react-material-ui-carousel'
 
-import Card from '../components/Card'
-
-import Background from '../public/images/Portfolio_Jeni07.jpg'
-import DogWalk from '../public/images/DogWalk.png'
-import DayCare from '../public/images/DayCare.png'
-import PetSitter from '../public/images/PetSitter.png'
+import DayCare from '../public/images/dog-food.png'
+import DogWalk from '../public/images/dog.png'
+import PetSitter from '../public/images/veterinary.png'
 import Barto from '../public/images/Barto.png'
 import Dolinha from '../public/images/Dolinha.png'
+import Mel from '../public/images/Mel.png'
 
-import {useTheme} from "@mui/material/styles"
-import {styled} from "@mui/material/styles"
-
-
-const RightGrid = styled(Grid)({
-  height:'80%',
-  position: 'absolute',
-  width: '100%',
-  right: 0,
- 
-})
-
-const LeftGrid = styled(Grid)({
-  height:'70%',
-  position: 'absolute',
-  width: '50%',
-  display: 'flex',
-  alignItems: 'center',
-  textAlign: 'center',
-})
-
-const MainGrid = styled(Grid)({
-  height: '100%',
-  display: 'flex',
-  width: '100%',
-  top: 30,
-  marginTop: 75,
-  position: 'absolute',
- 
-})
-
-const Image1 = styled(Image)({
-  height: '100%',
-  width: '100%',
-})
+import { useTheme } from "@mui/material/styles"
+import { styled } from "@mui/material/styles"
 
 
 const MiddleGrid = styled(Grid)(({theme}) => ({
-  marginTop: 700,
+  marginTop: 720,
   paddingTop: 20,
   height: '100%',
   display: 'flex',
@@ -66,11 +34,20 @@ const MiddleGrid = styled(Grid)(({theme}) => ({
   backgroundColor: theme.palette.primary.main
 }))
 
-const CardGrid = styled(Container)({
+const GridContainerIcon = styled(Grid)({
   marginTop: 50,
   marginBottom: 50,
+  display:'flex',
+  justifyContent: 'center'
 })
 
+const IconGrid = styled(Grid)(({theme}) => ({
+  borderColor: theme.palette.primary.pink,
+  borderRadius: '25px',
+  borderStyle:'solid',
+  margin: 10,
+  padding: 10
+}))
 const TitleTypography = styled(Typography)(({theme}) =>({
   color: theme.palette.primary.pink,
 }))
@@ -89,6 +66,7 @@ const PaperCarousel = styled(Paper)(({theme})=>({
   backgroundColor: theme.palette.primary.main
 }))
 
+
 const Home = () => {
   const theme = useTheme()
   const feedbacks = [
@@ -102,20 +80,19 @@ const Home = () => {
       image: Dolinha,
       text: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     },
-    // Adicione mais feedbacks conforme necessário
+    {
+      name: 'Mel',
+      image: Mel,
+      text: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    },
+    
   ]
   
   return (
     <>
-      <MainGrid container xs={12}>
-        <RightGrid item xs={12} >
-          <Image1 
-            alt='Foto'
-            src={Background}       
-          />
-        </RightGrid>
-      </MainGrid>
-      
+      <BackgroundGrid
+        image={Background}
+      />
       <MiddleGrid container rowSpacing={6}>
         <Grid item>
           <TitleTypography variant="h2">
@@ -133,33 +110,49 @@ const Home = () => {
           </TxtTypography>
         </Grid>
 
-        <CardGrid maxWidth='lg'>
-            <TitleTypography component='h2' variant='h4' align='center'>
-              Destaques
-            </TitleTypography>
-            <br />
-            <Grid container spacing={4}>
-            <Grid item xs={12} sm={6} md={4}> 
-              <Card
-                image={DogWalk}  
-                title="Dog Walking"
-                
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}> 
-              <Card
-                image={PetSitter}  
-                title="Pet sitter"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}> 
-              <Card
-                image={DayCare}  
-                title="Day care"
-              />
-            </Grid>
-            </Grid>
-        </CardGrid>
+        <GridContainerIcon container xs={12}>
+          <Grid 
+            container 
+            xs={8} 
+            spacing={4} 
+            display='flex' 
+            flexWrap='nowrap'
+          >
+          <IconGrid item xs={12} sm={6} md={4}> 
+            <Image 
+              alt='Dog Walk icon'
+              src={DogWalk}
+              height={200}
+              width={200}
+            />
+            <Typography variant="h5" fontWeight='bold' color={theme.palette.secondary.main}>
+              Dog Walk
+            </Typography>
+          </IconGrid>
+          <IconGrid item xs={12} sm={6} md={4}> 
+            <Image
+              src={PetSitter}  
+              alt="Pet sitter icon"
+              height={200}
+              width={200}
+            />
+            <Typography variant="h5" fontWeight='bold' color={theme.palette.secondary.main}>
+              Pet Sitter
+            </Typography>
+          </IconGrid>
+          <IconGrid item xs={12} sm={6} md={4}> 
+            <Image
+              src={DayCare}  
+              alt="Day care icon"
+              height={200}
+              width={200}
+            />
+            <Typography variant="h5" fontWeight='bold' color={theme.palette.secondary.main}>
+              Day Care
+            </Typography>
+          </IconGrid>
+          </Grid>
+        </GridContainerIcon>
       </MiddleGrid>
       
       <Grid

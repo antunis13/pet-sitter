@@ -33,7 +33,7 @@ const Footer = () =>{
     const theme = useTheme()
     return(
         <StyledPaper component='footer'>
-            <Container maxWidth='lg' sx={10} >
+            <Container maxWidth='lg' xs={10} >
                 <Grid container xs={12}>
                     <Grid container xs={2}>
                         <Image
