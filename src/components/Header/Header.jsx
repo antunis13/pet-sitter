@@ -60,12 +60,14 @@ const Header = () => {
                         </Grid>
                 
                         <Grid item  xs={2} textAlign='center'>
-                            <Image
-                                alt='Logo'
-                                src={logo}
-                                width={90}
-                                height={90}
-                            />  
+                            <Link href='/'>
+                                <Image
+                                    alt='Logo'
+                                    src={logo}
+                                    width={90}
+                                    height={90}
+                                />  
+                            </Link>
                         </Grid>
                     
                         <Grid item  xs={2}>

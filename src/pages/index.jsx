@@ -1,5 +1,6 @@
 
 import Image from "next/image"
+import Link from "next/link"
 import { 
   Grid, 
   Typography,
@@ -43,7 +44,7 @@ const GridContainerIcon = styled(Grid)({
 
 const IconGrid = styled(Grid)(({theme}) => ({
   borderColor: theme.palette.primary.pink,
-  borderRadius: '25px',
+  borderRadius: '20px',
   borderStyle:'solid',
   margin: 10,
   padding: 10
@@ -119,37 +120,43 @@ const Home = () => {
             flexWrap='nowrap'
           >
           <IconGrid item xs={12} sm={6} md={4}> 
-            <Image 
-              alt='Dog Walk icon'
-              src={DogWalk}
-              height={200}
-              width={200}
-            />
-            <Typography variant="h5" fontWeight='bold' color={theme.palette.secondary.main}>
-              Dog Walk
-            </Typography>
+            <Link href='services#dogWalk'>
+              <Image 
+                alt='Dog Walk icon'
+                src={DogWalk}
+                height={200}
+                width={200}
+              />
+              <Typography variant="h5" fontWeight='bold' color={theme.palette.secondary.main}>
+                Dog Walk
+              </Typography>
+            </Link>
           </IconGrid>
           <IconGrid item xs={12} sm={6} md={4}> 
-            <Image
-              src={PetSitter}  
-              alt="Pet sitter icon"
-              height={200}
-              width={200}
-            />
-            <Typography variant="h5" fontWeight='bold' color={theme.palette.secondary.main}>
-              Pet Sitter
-            </Typography>
+            <Link href='services#petSitter'>
+              <Image
+                src={PetSitter}  
+                alt="Pet sitter icon"
+                height={200}
+                width={200}
+              />
+              <Typography variant="h5" fontWeight='bold' color={theme.palette.secondary.main}>
+                Pet Sitter
+              </Typography>
+            </Link>
           </IconGrid>
           <IconGrid item xs={12} sm={6} md={4}> 
-            <Image
-              src={DayCare}  
-              alt="Day care icon"
-              height={200}
-              width={200}
-            />
-            <Typography variant="h5" fontWeight='bold' color={theme.palette.secondary.main}>
-              Day Care
-            </Typography>
+            <Link href='/services#dayCare' >
+              <Image
+                src={DayCare}  
+                alt="Day care icon"
+                height={200}
+                width={200}
+              />
+              <Typography variant="h5" fontWeight='bold' color={theme.palette.secondary.main}>
+                Day Care
+              </Typography>
+            </Link>
           </IconGrid>
           </Grid>
         </GridContainerIcon>
