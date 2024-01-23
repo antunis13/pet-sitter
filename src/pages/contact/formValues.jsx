@@ -1,4 +1,4 @@
-import { object, string, number, array } from 'yup'
+import { object, string, number } from 'yup'
 
 const initialValues={
     name: '',

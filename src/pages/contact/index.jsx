@@ -2,14 +2,17 @@ import {
   Typography, 
   Grid,
   TextField,
-   Box,
-   Button,
+  Box,
+  Button,
+  CircularProgress,
 } from "@mui/material"
 
+import axios from "axios"
 import { Formik } from "formik"
-
 import { initialValues, validationSchema } from "./formValues"
+
 import BackgroundGrid from "@/components/BackgroundGrid"
+import useToasty from '../../contexts/Toasty'
 
 import Background from '../../public/images/Portfolio_Jeni08.jpg'
 
@@ -38,6 +41,28 @@ const FormDiv = styled('div')(({theme}) => ({
 }))
 
 const Contact = () => {
+  const { setToasty } = useToasty()
+
+  const handleFormSubmit = async (values, { setSubmitting, resetForm }) => {
+    try {
+      await axios.post('/api/email', values)
+      setToasty({
+        open: true,
+        text: 'Email enviado com sucesso',
+        severity: 'success',
+      })
+      resetForm()
+    } catch (error) {
+      console.error('Erro ao enviar o formulário:', error)
+      setToasty({
+        open: true,
+        text: 'Ocorreu um erro, tente novamente',
+        severity: 'error',
+     })
+    } finally {
+      setSubmitting(false)
+    }  
+  }
   return (
     <>
       <BackgroundGrid
@@ -53,16 +78,15 @@ const Contact = () => {
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
-            onSubmit={(values) =>{
-              console.log('ok, enviou o form', values)
-            }}
+            onSubmit={handleFormSubmit}
           >
             {
               ({
                 values,
                 errors,
                 handleChange,
-                handleSubmit
+                handleSubmit,
+                isSubmitting,
               }) => {
                 return(
                   <form onSubmit={handleSubmit}>
@@ -134,9 +158,14 @@ const Contact = () => {
                         />
                       </FormDiv>
                       <FormDiv>
-                        <Button type="submit" variant="outlined" color="secondary">
-                          Enviar
-                        </Button>
+                        {
+                          isSubmitting
+                          ?<CircularProgress />
+                          :
+                          <Button type="submit" variant="outlined" color="secondary">
+                            Enviar
+                          </Button>
+                        }
                       </FormDiv>
                     </FormBox>  
                   </form>
