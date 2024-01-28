@@ -6,13 +6,15 @@ import {
   Typography,
   Paper,
   Avatar,
+  Box,
 } from "@mui/material"
 
 import BackgroundGrid from "@/components/BackgroundGrid"
-import Background from '../public/images/Portfolio_Jeni07.jpg'
+import MiddleGrid from "@/components/MiddleGrid"
 
 import Carousel from 'react-material-ui-carousel'
 
+import Background from '../public/images/Portfolio_Jeni07.jpg'
 import DayCare from '../public/images/dog-food.png'
 import DogWalk from '../public/images/dog.png'
 import PetSitter from '../public/images/veterinary.png'
@@ -24,18 +26,7 @@ import { useTheme } from "@mui/material/styles"
 import { styled } from "@mui/material/styles"
 
 
-const MiddleGrid = styled(Grid)(({theme}) => ({
-  marginTop: 720,
-  paddingTop: 20,
-  height: '100%',
-  display: 'flex',
-  justifyContent: 'center',
-  textAlign: 'center',
-  //border: '2px solid black'
-  backgroundColor: theme.palette.primary.main
-}))
-
-const GridContainerIcon = styled(Grid)({
+const BoxContainerIcon = styled(Box)({
   marginTop: 50,
   marginBottom: 50,
   display:'flex',
@@ -47,14 +38,17 @@ const IconGrid = styled(Grid)(({theme}) => ({
   borderRadius: '20px',
   borderStyle:'solid',
   margin: 10,
-  padding: 10
+  padding: 10,
 }))
+
 const TitleTypography = styled(Typography)(({theme}) =>({
   color: theme.palette.primary.pink,
+  fontFamily: 'QuentimPro',
 }))
 
 const TxtTypography = styled(Typography)(({theme}) =>({
   color: theme.palette.secondary.main,
+  padding: theme.spacing(4),
 }))
 
 const GridCarousel = styled(Grid)({
@@ -67,6 +61,14 @@ const PaperCarousel = styled(Paper)(({theme})=>({
   backgroundColor: theme.palette.primary.main
 }))
 
+const GridIconContainer = styled(Grid)`
+  display: 'flex';
+  justify-content: center;
+  flex-wrap: 'nowrap';
+  @media(max-width: 780px){
+   flex-wrap: wrap;
+  }
+`
 
 const Home = () => {
   const theme = useTheme()
@@ -94,7 +96,7 @@ const Home = () => {
       <BackgroundGrid
         image={Background}
       />
-      <MiddleGrid container rowSpacing={6}>
+      <MiddleGrid>
         <Grid item>
           <TitleTypography variant="h2">
             Quais serviços oferecemos?
@@ -102,7 +104,10 @@ const Home = () => {
         </Grid>
         <Grid 
           item
-          xs={6}
+          sm={12}
+          md={6}
+          lg={6}
+          xl={3}
           justifyContent='center'
           alignItems='center'
         >
@@ -111,62 +116,64 @@ const Home = () => {
           </TxtTypography>
         </Grid>
 
-        <GridContainerIcon container xs={12}>
-          <Grid 
+        <BoxContainerIcon>
+          <GridIconContainer
             container 
-            xs={8} 
             spacing={4} 
             display='flex' 
             flexWrap='nowrap'
           >
-          <IconGrid item xs={12} sm={6} md={4}> 
+          <IconGrid item  xs={9} sm={8} md={8} lg={4} xl={4} > 
             <Link href='services#dogWalk'>
               <Image 
                 alt='Dog Walk icon'
                 src={DogWalk}
-                height={200}
-                width={200}
+                layout="responsive"
+                width={90}
+                height={90}
               />
               <Typography variant="h5" fontWeight='bold' color={theme.palette.secondary.main}>
                 Dog Walk
               </Typography>
             </Link>
           </IconGrid>
-          <IconGrid item xs={12} sm={6} md={4}> 
+          <IconGrid item xs={9} sm={8} md={8} lg={4} xl={4}> 
             <Link href='services#petSitter'>
               <Image
                 src={PetSitter}  
                 alt="Pet sitter icon"
-                height={200}
-                width={200}
+                layout="responsive"
+                width={90}
+                height={90}
               />
               <Typography variant="h5" fontWeight='bold' color={theme.palette.secondary.main}>
                 Pet Sitter
               </Typography>
             </Link>
           </IconGrid>
-          <IconGrid item xs={12} sm={6} md={4}> 
+          <IconGrid item xs={9} sm={8} md={8} lg={4} xl={4}> 
             <Link href='/services#dayCare' >
               <Image
                 src={DayCare}  
                 alt="Day care icon"
-                height={200}
-                width={200}
+                layout="responsive"
+                width={90}
+                height={90}
               />
               <Typography variant="h5" fontWeight='bold' color={theme.palette.secondary.main}>
                 Day Care
               </Typography>
             </Link>
           </IconGrid>
-          </Grid>
-        </GridContainerIcon>
+          </GridIconContainer>
+        </BoxContainerIcon>
       </MiddleGrid>
       
       <Grid
         container
         display='flex'
         justifyContent='center'
-        alignItems='center'
+        alignItems = 'center'
         textAlign='center'
         rowSpacing={6}
         backgroundColor={theme.palette.primary.pink}

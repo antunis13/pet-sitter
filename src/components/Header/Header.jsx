@@ -6,24 +6,26 @@ import{
     AppBar,
     Toolbar,
     Typography,
+    Container,
+    Grid,
 } from '@mui/material' 
-import { Container, Grid } from '@mui/material'
+
+import MenuHamburguer from '../MenuHamburguer'
 
 import logo from '../../public/images/Logotipo_Jeni-08.png'
 
 import {styled} from '@mui/material/styles'
-
+import style from '../Components.module.css'
 
 const HeaderGrid = styled(Grid)(({theme}) =>({
     alignItems: 'center',
-    marginLeft: theme.spacing(25),
-
+    marginLeft: theme.spacing(30),
 }))
 
 const HeaderAppBar = styled(AppBar)({
     display: 'flex',
     justifyContent: 'center',
-
+    padding: 10,
 })
 
 const TypographyStyle = styled(Typography)`
@@ -31,60 +33,67 @@ const TypographyStyle = styled(Typography)`
         color:  ${(props) => props.theme.palette.secondary.main};
     }
 `
+const GridPages = styled(Grid)({
+    display: 'flex',
+    justifyContent: 'center'
+})
+
+
 
 const Header = () => {
     return(
-        <HeaderAppBar position="static" elevation={0}  sx={{height: '100px'}}>
+        <HeaderAppBar position="static" elevation={0}  >
             <Container maxWidth='md'>
                 <Toolbar>
+                    <MenuHamburguer className={style.menuHamburguer} />
                     <HeaderGrid 
                         container 
-                        xs={9}
-                        display='flex'
-                        justifyContent='space-around'
+                        
                     >
-                        <Grid item xs={2}>
+                        <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={3}>
                             <Link href="/">
-                                <TypographyStyle variant="h6" component="div" color='primary.pink' sx={{ flexGrow: 1 }}>
+                                <TypographyStyle variant="h6" component="div" color='primary.pink'>
                                     Home
                                 </TypographyStyle>
                             </Link>
-                        </Grid>
+                        </GridPages>
                 
-                        <Grid item  xs={2}>
+                        <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={3}>
                             <Link href="/about">
-                                <TypographyStyle variant="h6" component="div" color='primary.pink' sx={{ flexGrow: 1 }}>
+                                <TypographyStyle variant="h6" component="div" color='primary.pink'>
                                     Sobre nós
                                 </TypographyStyle>
                             </Link>
-                        </Grid>
-                
-                        <Grid item  xs={2} textAlign='center'>
+                        </GridPages>
+
+                        <GridPages item sm={2} md={2} lg={2} xl={3} textAlign='center'>
                             <Link href='/'>
                                 <Image
                                     alt='Logo'
+                                    className={style.logo}
                                     src={logo}
                                     width={90}
                                     height={90}
                                 />  
                             </Link>
-                        </Grid>
-                    
-                        <Grid item  xs={2}>
+                        </GridPages>
+
+                        <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={3}>
                             <Link href="/services">
-                                <TypographyStyle variant="h6" component="div" color='primary.pink' sx={{ flexGrow: 1 }}>
+                                <TypographyStyle variant="h6" component="div" color='primary.pink'>
                                     Serviços
                                 </TypographyStyle>
                             </Link>
-                        </Grid>
-                    
-                        <Grid item  xs={2}>  
+                        </GridPages>
+
+                        <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={3}>  
                             <Link href="/contact">
-                                <TypographyStyle variant="h6" component="div" color='primary.pink' sx={{ flexGrow: 1 }}>
+                                <TypographyStyle variant="h6" component="div" color='primary.pink'>
                                     Contato
                                 </TypographyStyle>
                             </Link>
-                        </Grid>
+                        </GridPages>
+                        
                     </HeaderGrid> 
                 </Toolbar>
             </Container>

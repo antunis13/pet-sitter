@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { 
   Typography, 
   Grid,
@@ -15,10 +16,10 @@ import BackgroundGrid from "@/components/BackgroundGrid"
 import useToasty from '../../contexts/Toasty'
 
 import Background from '../../public/images/Portfolio_Jeni08.jpg'
-
+import Email from '../../public/images/mail.png'
 
 import { styled } from "@mui/material/styles"
-
+import { useTheme } from "@mui/material/styles"
 
 const MiddleGrid = styled(Grid)(({theme}) => ({
   marginTop: 720,
@@ -35,12 +36,22 @@ const FormBox = styled(Box)({
   textAlign: 'start'
 })
 
+const ContactBox = styled(Box)(({theme}) => ({
+  display: 'flex',
+  padding: theme.spacing(4),
+}))
+
+const ContactTyp = styled(Typography)(({theme}) =>({
+  marginLeft: theme.spacing(3),
+}))
+
 const FormDiv = styled('div')(({theme}) => ({
   marginTop: theme.spacing(3),
   marginBottom: theme.spacing(3),
 }))
 
 const Contact = () => {
+  const theme = useTheme()
   const { setToasty } = useToasty()
 
   const handleFormSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -68,11 +79,11 @@ const Contact = () => {
       <BackgroundGrid
         image={Background}
       />
-      <MiddleGrid container>
-        <Grid item xs={12}>
-        <Typography variant="h4">
-          Entre em contato com a gente
-        </Typography>
+      <MiddleGrid container columnGap={20}>
+        <Grid item xs={12} marginBottom={5}>
+          <Typography variant="h4">
+            Entre em contato com a gente
+          </Typography>
         </Grid>
         <Grid item xs={4}>
           <Formik
@@ -175,7 +186,42 @@ const Contact = () => {
             }
           </Formik>
         </Grid>
-
+        <Grid item xs={3}>
+          <ContactBox>
+            <Image 
+              alt='Icone de email'
+              src={Email}
+              height={30}
+              width={30}
+            />
+            <ContactTyp>
+              emaildeContato@gmail.com
+            </ContactTyp>
+          </ContactBox>
+          <ContactBox>
+            <a href="https://wa.me/5511992673254" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp fa-2x" style={{color: theme.palette.secondary.main }}
+              ></i>
+            </a>
+            <ContactTyp>
+              (11) 99267-3254
+            </ContactTyp>
+          </ContactBox>
+          <ContactBox>
+            <a href="https://www.instagram.com/jenipetsitter/">
+              <i class="fa-brands fa-instagram fa-2x" style={{color: theme.palette.secondary.main }}></i>
+            </a>
+            <ContactTyp>
+              jenipetsitter
+            </ContactTyp>
+          </ContactBox>
+          <ContactBox>
+            <i class="fa-solid fa-location-dot fa-2x" style={{color: theme.palette.secondary.main}}></i>
+            <ContactTyp>
+              Jundiaí
+            </ContactTyp>
+          </ContactBox>
+        </Grid>
       </MiddleGrid>
     </>
   )
