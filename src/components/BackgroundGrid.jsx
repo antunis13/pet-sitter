@@ -3,7 +3,6 @@ import Image from "next/image"
 import { Grid } from "@mui/material"
 
 import { styled } from "@mui/material/styles"
-import style from './Components.module.css'
 
 const RightGrid = styled(Grid)({
     height:'80%',
@@ -35,11 +34,11 @@ const Image1 = styled(Image)({
 })
 const BackgroundGrid = ({image}) =>{
     return(
-        <MainGrid className={style.background} container xs={12}>
+        <MainGrid container xs={12}>
             <RightGrid item xs={12} >
                 <Image1
                     alt='Foto'
-                    src={image}       
+                    src={image}    
                 />
             </RightGrid>
        </MainGrid>

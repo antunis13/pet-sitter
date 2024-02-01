@@ -97,17 +97,18 @@ const Home = () => {
         image={Background}
       />
       <MiddleGrid>
-        <Grid item>
+        <Grid item xs={12} sm={11} md={12} lg={12} xl={12}>
           <TitleTypography variant="h2">
             Quais serviços oferecemos?
           </TitleTypography>
         </Grid>
         <Grid 
           item
-          sm={12}
-          md={6}
-          lg={6}
-          xl={3}
+          xs={10}
+          sm={9}
+          md={9}
+          lg={8}
+          xl={8}
           justifyContent='center'
           alignItems='center'
         >

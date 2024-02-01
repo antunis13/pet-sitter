@@ -5,6 +5,7 @@ import { Grid, Typography } from "@mui/material"
 import { styled } from "@mui/material/styles"
 
 import BackgroundGrid from "@/components/BackgroundGrid"
+import MiddleGrid from "@/components/MiddleGrid"
 
 import Background from '../public/images/Avatar_Jeni1.jpg'
 import waveEffect from '../public/images/waveBackground.svg'
@@ -13,16 +14,7 @@ import PetSitterService from '../public/images/veterinary.png'
 import DayCareService from '../public/images/dog-food.png'
 import Location from '../public/images/location.png'
 
-const MiddleGrid = styled(Grid)(({theme}) => ({
-  marginTop: 700,
-  paddingTop: 20,
-  height: '100%',
-  display: 'flex',
-  justifyContent: 'space-between',
-  textAlign: 'center',
-  //border: '2px solid black'
-  backgroundColor: theme.palette.primary.main
-}))
+
 
 const BoxGrid = styled(Grid)(({theme}) => ({
   padding: theme.spacing(5),
@@ -55,6 +47,38 @@ const GridLocation = styled(Grid)(({theme}) => ({
   justifyContent: 'center'
 }))
 
+const GridImage = styled(Grid)`
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+
+  @media(max-width: 780px){
+    margin-left: 20px;
+  } 
+`
+const InvertedGrid = styled(Grid)`
+  display: flex;
+  text-align:center;
+  padding: 12px;
+
+  .item1 {
+    order: 1;
+  }
+
+  .item2{
+    order: 2;
+  }
+
+  @media(max-width: 780px){
+    .item1{
+      order: 2;
+    }
+
+    .item2{
+      order: 1;
+    }
+  } 
+`
 
 const Services = () => {
   return (
@@ -63,19 +87,13 @@ const Services = () => {
         <BackgroundGrid
           image={Background}
         />
-        <WaveImg 
-          src={waveEffect}
-        />
       </Grid> 
       <MiddleGrid container rowSpacing={4} id="dogWalk">
         <Grid item xs={12}>
           <Typography variant="h3">Dog Walk</Typography>
         </Grid>
-        <Grid 
-          item xs={3} 
-          marginLeft={20} 
-          display='flex' 
-          alignItems='center'
+        <GridImage 
+          item xs={10} sm={9} md={6} lg={3} xl={3} 
         >
           <Image 
             alt='Dog Walk Service'
@@ -83,10 +101,14 @@ const Services = () => {
             width={400}
             height={300}
           />
-        </Grid>
+        </GridImage>
         <BoxGrid 
           item 
-          xs={6}
+          xs={10} 
+          sm={9}
+          md={6}
+          lg={6}
+          xl={6}
           borderRight='2px solid'
           borderColor='primary.pink'
         >
@@ -116,15 +138,20 @@ const Services = () => {
           </Grid>
         </BoxGrid>
       </MiddleGrid>
-      <StyledGrid container rowSpacing={4} id="petSitter">
+      <InvertedGrid container rowSpacing={4} id="petSitter">
         <Grid item xs={12} >
           <StyledTypography variant="h3">Pet Sitter</StyledTypography>
         </Grid>
         <BoxGrid 
           item 
-          xs={6}
+          xs={10} 
+          sm={9}
+          md={6}
+          lg={6}
+          xl={6}
           borderLeft='2px solid'
           borderColor='primary.pink'
+          className="item1"
         >
           <Typography variant="h6" >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -151,20 +178,17 @@ const Services = () => {
             </Typography>
           </Grid>
         </BoxGrid>
-        <Grid 
-          item xs={3} 
-          marginLeft={20} 
-          display='flex' 
-          alignItems='center'
+        <GridImage 
+          item xs={10} sm={9} md={3} lg={3} xl={3} className="item2"
         >
           <Image 
-            alt='Dog Walk Service'
+            alt='Pet Sitter Service'
             src={PetSitterService}
             width={400}
             height={300}
           />
-        </Grid>
-      </StyledGrid>
+        </GridImage>
+      </InvertedGrid>
       <StyledGrid 
         container 
         rowSpacing={4} 
@@ -176,11 +200,8 @@ const Services = () => {
         <Grid item xs={12} >
           <StyledTypography variant="h3">Day Care</StyledTypography>
         </Grid>
-        <Grid 
-          item xs={3} 
-          marginLeft={20} 
-          display='flex' 
-          alignItems='center'
+        <GridImage 
+          item xs={10} sm={9} md={6} lg={3} xl={3} 
         >
           <Image 
             alt='Day Care Service'
@@ -188,10 +209,14 @@ const Services = () => {
             width={400}
             height={300}
           />
-        </Grid>
+        </GridImage>
         <BoxGrid 
           item 
-          xs={6}
+          xs={10} 
+          sm={9}
+          md={6}
+          lg={6}
+          xl={6}
           borderRight='2px solid'
           borderColor='primary.pink'
         >

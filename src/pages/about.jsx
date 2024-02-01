@@ -5,6 +5,7 @@ import { Typography,
 } from "@mui/material"
 
 import BackgroundGrid from "@/components/BackgroundGrid"
+import MiddleGrid from "@/components/MiddleGrid"
 
 import Background from '../public/images/Portfolio_Jeni06.jpg'
 import Efeito1 from '../public/images/pawprint.png'
@@ -12,16 +13,6 @@ import Wave from '../public/images/wave.svg'
 
 import { styled } from "@mui/material/styles"
 
-const MiddleGrid = styled(Grid)(({theme}) => ({
-  marginTop: 720,
-  paddingTop: 20,
-  marginBottom: 15,
-  height: '100%',
-  display: 'flex',
-  justifyContent: 'center',
-  textAlign: 'center',
-  backgroundColor: theme.palette.primary.main
-}))
 
 const ImageEffect = styled(Image)(({theme}) =>({
   marginRight: theme.spacing(4),
@@ -86,8 +77,8 @@ const About = () => {
         backgroundColor='primary.pink'
       >
         <Container maxWidth='md'>
-          <Grid container rowSpacing={4} marginBottom={10}>
-            <Grid item margin='20px 0 30px 0'>
+          <Grid container rowSpacing={4} marginBottom={10} padding={2}>
+            <Grid item xs={12} sm={10} md={12} lg={12} xl={12} margin='20px 0 30px 0'>
               <Typography variant="h3" color='primary.main'>
                 Por que escolher a Jeni?
               </Typography>
@@ -150,7 +141,7 @@ const About = () => {
           </Typography>
         </Grid>
 
-        <BoxAbout item xs={3}>
+        <BoxAbout item xs={10} sm={9} md={6} lg={3} xl={3}>
           <WaveImg 
             alt="efeito"
             src={Wave}
@@ -173,7 +164,7 @@ const About = () => {
           </TypographyAbout>
         </BoxAbout>
 
-        <BoxAbout item xs={3}>
+        <BoxAbout item  xs={10} sm={9} md={6} lg={3} xl={3}>
           <WaveImg 
             alt="efeito"
             src={Wave}
@@ -196,7 +187,7 @@ const About = () => {
           </TypographyAbout>
         </BoxAbout>
 
-        <BoxAbout item xs={3}>
+        <BoxAbout item xs={10} sm={9} md={6} lg={3} xl={3}>
           <WaveImg 
             alt="efeito"
             src={Wave}

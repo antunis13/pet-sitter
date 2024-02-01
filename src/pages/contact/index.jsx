@@ -13,6 +13,7 @@ import { Formik } from "formik"
 import { initialValues, validationSchema } from "./formValues"
 
 import BackgroundGrid from "@/components/BackgroundGrid"
+import MiddleGrid from "@/components/MiddleGrid"
 import useToasty from '../../contexts/Toasty'
 
 import Background from '../../public/images/Portfolio_Jeni08.jpg'
@@ -21,16 +22,6 @@ import Email from '../../public/images/mail.png'
 import { styled } from "@mui/material/styles"
 import { useTheme } from "@mui/material/styles"
 
-const MiddleGrid = styled(Grid)(({theme}) => ({
-  marginTop: 720,
-  paddingTop: 20,
-  marginBottom: 15,
-  height: '100%',
-  display: 'flex',
-  justifyContent: 'center',
-  textAlign: 'center',
-  backgroundColor: theme.palette.primary.main
-}))
 
 const FormBox = styled(Box)({
   textAlign: 'start'
@@ -49,6 +40,12 @@ const FormDiv = styled('div')(({theme}) => ({
   marginTop: theme.spacing(3),
   marginBottom: theme.spacing(3),
 }))
+
+const GridForm = styled(Grid)({
+  padding: '10px',
+  margin: '10px'
+})
+  
 
 const Contact = () => {
   const theme = useTheme()
@@ -80,12 +77,12 @@ const Contact = () => {
         image={Background}
       />
       <MiddleGrid container columnGap={20}>
-        <Grid item xs={12} marginBottom={5}>
+        <Grid item xs={12} marginBottom={5} padding={3}>
           <Typography variant="h4">
             Entre em contato com a gente
           </Typography>
         </Grid>
-        <Grid item xs={4}>
+        <GridForm item xs={10} sm={9}  md={6} lg={4} xl={4}>
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -185,8 +182,8 @@ const Contact = () => {
               }
             }
           </Formik>
-        </Grid>
-        <Grid item xs={3}>
+        </GridForm>
+        <Grid item xs={10} sm={9} md={6} lg={3} xl={3}>
           <ContactBox>
             <Image 
               alt='Icone de email'

@@ -50,7 +50,7 @@ const Header = () => {
                         container 
                         
                     >
-                        <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={3}>
+                        <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={2}>
                             <Link href="/">
                                 <TypographyStyle variant="h6" component="div" color='primary.pink'>
                                     Home
@@ -58,7 +58,7 @@ const Header = () => {
                             </Link>
                         </GridPages>
                 
-                        <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={3}>
+                        <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={2}>
                             <Link href="/about">
                                 <TypographyStyle variant="h6" component="div" color='primary.pink'>
                                     Sobre nós
@@ -66,7 +66,7 @@ const Header = () => {
                             </Link>
                         </GridPages>
 
-                        <GridPages item sm={2} md={2} lg={2} xl={3} textAlign='center'>
+                        <GridPages item xs={1} sm={8} md={2} lg={2} xl={2} textAlign='center'>
                             <Link href='/'>
                                 <Image
                                     alt='Logo'
@@ -78,7 +78,7 @@ const Header = () => {
                             </Link>
                         </GridPages>
 
-                        <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={3}>
+                        <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={2}>
                             <Link href="/services">
                                 <TypographyStyle variant="h6" component="div" color='primary.pink'>
                                     Serviços
@@ -86,7 +86,7 @@ const Header = () => {
                             </Link>
                         </GridPages>
 
-                        <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={3}>  
+                        <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={2}>  
                             <Link href="/contact">
                                 <TypographyStyle variant="h6" component="div" color='primary.pink'>
                                     Contato

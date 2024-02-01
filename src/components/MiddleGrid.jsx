@@ -4,12 +4,20 @@ import style from './Components.module.css'
 
 
 const StyledGrid = styled(Grid)(({theme}) => ({
-    paddingTop: 20,
+    padding: 20,
     height: '100%',
     display: 'flex',
     justifyContent: 'center',
     textAlign: 'center',
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: theme.palette.primary.main,
+
+    [theme.breakpoints.up('xl')]: {
+        paddingTop: 50,
+    },
+    [`@media (min-width ${theme.breakpoints.values.lg}px) and (max-width ${theme.breakpoints.values.xl}px)`]: {
+        paddingTop: 50,
+    }
+
 }))
 
 
