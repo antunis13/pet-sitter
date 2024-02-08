@@ -12,10 +12,10 @@ const StyledGrid = styled(Grid)(({theme}) => ({
     backgroundColor: theme.palette.primary.main,
 
     [theme.breakpoints.up('xl')]: {
-        paddingTop: 50,
+        paddingTop: 70,
     },
     [`@media (min-width ${theme.breakpoints.values.lg}px) and (max-width ${theme.breakpoints.values.xl}px)`]: {
-        paddingTop: 50,
+        paddingTop: 70,
     }
 
 }))

@@ -29,7 +29,7 @@ const MainGrid = styled(Grid)({
 })
   
 const Image1 = styled(Image)({
-    height: '105%',
+    height: '110%',
     width: '100%',
 })
 const BackgroundGrid = ({image}) =>{

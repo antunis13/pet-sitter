@@ -9,7 +9,7 @@ import {
     Paper 
 } from "@mui/material"
 
-import logoJeni from '../public/images/Logotipo_Jeni-06.png'
+import logoJeni from '../public/images/Logotipo_Jeni-18.png'
 
 
 import { useTheme } from '@mui/material/styles'

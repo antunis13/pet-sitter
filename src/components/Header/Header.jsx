@@ -12,7 +12,7 @@ import{
 
 import MenuHamburguer from '../MenuHamburguer'
 
-import logo from '../../public/images/Logotipo_Jeni-08.png'
+import logo from '../../public/images/Logotipo_Jeni-14.png'
 
 import {styled} from '@mui/material/styles'
 import style from '../Components.module.css'

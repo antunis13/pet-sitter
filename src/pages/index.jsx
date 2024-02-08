@@ -34,10 +34,7 @@ const BoxContainerIcon = styled(Box)({
 })
 
 const IconGrid = styled(Grid)(({theme}) => ({
-  borderColor: theme.palette.primary.pink,
-  borderRadius: '20px',
-  borderStyle:'solid',
-  margin: 10,
+  margin: '10px 30px 10px 30px',
   padding: 10,
 }))
 
@@ -124,7 +121,7 @@ const Home = () => {
             display='flex' 
             flexWrap='nowrap'
           >
-          <IconGrid item  xs={9} sm={8} md={8} lg={4} xl={4} > 
+          <IconGrid item  xs={9} sm={8} md={6} lg={2} xl={4} > 
             <Link href='services#dogWalk'>
               <Image 
                 alt='Dog Walk icon'
@@ -138,7 +135,7 @@ const Home = () => {
               </Typography>
             </Link>
           </IconGrid>
-          <IconGrid item xs={9} sm={8} md={8} lg={4} xl={4}> 
+          <IconGrid item xs={9} sm={8} md={6} lg={2} xl={4}> 
             <Link href='services#petSitter'>
               <Image
                 src={PetSitter}  
@@ -152,7 +149,7 @@ const Home = () => {
               </Typography>
             </Link>
           </IconGrid>
-          <IconGrid item xs={9} sm={8} md={8} lg={4} xl={4}> 
+          <IconGrid item xs={9} sm={8} md={6} lg={2} xl={4}> 
             <Link href='/services#dayCare' >
               <Image
                 src={DayCare}  
