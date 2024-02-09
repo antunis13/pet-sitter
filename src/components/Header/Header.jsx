@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -8,13 +8,17 @@ import{
     Typography,
     Container,
     Grid,
+    Menu,
+    MenuItem,
+    Button,
+    Divider
 } from '@mui/material' 
 
 import MenuHamburguer from '../MenuHamburguer'
 
 import logo from '../../public/images/Logotipo_Jeni-14.png'
 
-import {styled} from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import style from '../Components.module.css'
 
 const HeaderGrid = styled(Grid)(({theme}) =>({
@@ -38,9 +42,22 @@ const GridPages = styled(Grid)({
     justifyContent: 'center'
 })
 
+const LinkMenu = styled(Link)(({ theme }) => ({
+    textDecoration: 'none',
+    color: theme.palette.primary.pink,
+})) 
 
 
 const Header = () => {
+    const [anchorMenu, setAnchorMenu ] = useState(null)
+    const openMenu = Boolean(anchorMenu)
+    const handleMouseEnter = (event) => {
+        setAnchorMenu(event.currentTarget)
+    }
+    
+    const handleMouseLeave = () => {
+        setAnchorMenu(null)
+    }
     return(
         <HeaderAppBar position="static" elevation={0}  >
             <Container maxWidth='md'>
@@ -79,11 +96,54 @@ const Header = () => {
                         </GridPages>
 
                         <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={2}>
-                            <Link href="/services">
+                            <Button
+                                size='small'
+                                id="basic-button"
+                                aria-controls='customized-menu'
+                                aria-haspopup="true"
+                                onMouseEnter={handleMouseEnter}
+                                style={{textTransform: 'none'}}
+                            >     
                                 <TypographyStyle variant="h6" component="div" color='primary.pink'>
-                                    Serviços
+                                    Serviços       
                                 </TypographyStyle>
-                            </Link>
+                            </Button>
+                            <Menu
+                                PaperProps={{
+                                    sx:{
+                                        boxShadow: 'none',
+                                        padding: '0px 10px 5px 10px',
+                                        backgroundColor: 'primary.main'
+                                    }
+                                }}
+                                id='customized-menu'
+                                open={openMenu}
+                                anchorEl={anchorMenu}
+                                keepMounted
+                                onClose={handleMouseLeave}
+                                MenuListProps={{ onMouseLeave: handleMouseLeave }} 
+                                
+                                anchorOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'left'
+                                }}
+                            >
+                                <LinkMenu href='/service' passHref>
+                                    <MenuItem onClick={handleMouseLeave}>Espaço Jeni</MenuItem>
+                                </LinkMenu>
+                                <Divider />
+                                <LinkMenu href='service/daycare' passHref>
+                                    <MenuItem  onClick={handleMouseLeave}>Day Care</MenuItem>
+                                </LinkMenu>
+                                <Divider />
+                                <LinkMenu href='service/dogwalk' passHref>
+                                    <MenuItem  onClick={handleMouseLeave}>Dog Walk</MenuItem>
+                                </LinkMenu>
+                                <Divider />
+                                <LinkMenu href='service/petsitter' passHref>
+                                    <MenuItem  onClick={handleMouseLeave}>Pet Sitter</MenuItem>
+                                </LinkMenu>
+                            </Menu>                            
                         </GridPages>
 
                         <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={2}>  
