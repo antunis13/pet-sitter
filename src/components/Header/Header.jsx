@@ -107,6 +107,7 @@ const Header = () => {
                                 <TypographyStyle variant="h6" component="div" color='primary.pink'>
                                     Serviços       
                                 </TypographyStyle>
+                                <i class="fa-solid fa-angle-down fa-sm" style={{color: '#ed7a8c'}}></i>
                             </Button>
                             <Menu
                                 PaperProps={{
@@ -128,19 +129,19 @@ const Header = () => {
                                     horizontal: 'left'
                                 }}
                             >
-                                <LinkMenu href='/service' passHref>
+                                <LinkMenu href='/services/jeniSpace' passHref>
                                     <MenuItem onClick={handleMouseLeave}>Espaço Jeni</MenuItem>
                                 </LinkMenu>
                                 <Divider />
-                                <LinkMenu href='service/daycare' passHref>
+                                <LinkMenu href='/services/dayCare' passHref>
                                     <MenuItem  onClick={handleMouseLeave}>Day Care</MenuItem>
                                 </LinkMenu>
                                 <Divider />
-                                <LinkMenu href='service/dogwalk' passHref>
+                                <LinkMenu href='/services/dogWalk' passHref>
                                     <MenuItem  onClick={handleMouseLeave}>Dog Walk</MenuItem>
                                 </LinkMenu>
                                 <Divider />
-                                <LinkMenu href='service/petsitter' passHref>
+                                <LinkMenu href='/services/petSitter' passHref>
                                     <MenuItem  onClick={handleMouseLeave}>Pet Sitter</MenuItem>
                                 </LinkMenu>
                             </Menu>                            

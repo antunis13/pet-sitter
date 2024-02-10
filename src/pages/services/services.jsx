@@ -8,7 +8,6 @@ import BackgroundGrid from "@/components/BackgroundGrid"
 import MiddleGrid from "@/components/MiddleGrid"
 
 import Background from '../public/images/Avatar_Jeni1.jpg'
-import waveEffect from '../public/images/waveBackground.svg'
 import DogWalkService from '../public/images/dog.png'
 import PetSitterService from '../public/images/veterinary.png'
 import DayCareService from '../public/images/dog-food.png'
