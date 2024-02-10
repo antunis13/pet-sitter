@@ -51,7 +51,9 @@ const LinkMenu = styled(Link)(({ theme }) => ({
 const Header = () => {
     const [anchorMenu, setAnchorMenu ] = useState(null)
     const openMenu = Boolean(anchorMenu)
+
     const handleMouseEnter = (event) => {
+    
         setAnchorMenu(event.currentTarget)
     }
     
@@ -102,12 +104,17 @@ const Header = () => {
                                 aria-controls='customized-menu'
                                 aria-haspopup="true"
                                 onMouseEnter={handleMouseEnter}
-                                style={{textTransform: 'none'}}
+                                style={{textTransform: 'none', color: openMenu ? '#174071' : '#ed7a8c' }}
                             >     
-                                <TypographyStyle variant="h6" component="div" color='primary.pink'>
+                                <TypographyStyle variant="h6" component="div" color={openMenu ? '#174071': 'primary.pink'}>
                                     Serviços       
                                 </TypographyStyle>
-                                <i class="fa-solid fa-angle-down fa-sm" style={{color: '#ed7a8c'}}></i>
+                                <i 
+                                    class="fa-solid fa-angle-down fa-sm" 
+                                    style={{
+                                        color: openMenu ? '#174071' : '#ed7a8c' 
+                                    }}
+                                ></i>
                             </Button>
                             <Menu
                                 PaperProps={{
@@ -134,15 +141,15 @@ const Header = () => {
                                 </LinkMenu>
                                 <Divider />
                                 <LinkMenu href='/services/dayCare' passHref>
-                                    <MenuItem  onClick={handleMouseLeave}>Day Care</MenuItem>
+                                    <MenuItem onClick={handleMouseLeave}>Day Care</MenuItem>
                                 </LinkMenu>
                                 <Divider />
                                 <LinkMenu href='/services/dogWalk' passHref>
-                                    <MenuItem  onClick={handleMouseLeave}>Dog Walk</MenuItem>
+                                    <MenuItem onClick={handleMouseLeave}>Dog Walk</MenuItem>
                                 </LinkMenu>
                                 <Divider />
                                 <LinkMenu href='/services/petSitter' passHref>
-                                    <MenuItem  onClick={handleMouseLeave}>Pet Sitter</MenuItem>
+                                    <MenuItem onClick={handleMouseLeave}>Pet Sitter</MenuItem>
                                 </LinkMenu>
                             </Menu>                            
                         </GridPages>

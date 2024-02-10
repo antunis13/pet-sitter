@@ -11,16 +11,7 @@ const RightGrid = styled(Grid)({
     right: 0,
    
 })
-  
- const LeftGrid = styled(Grid)({
-    height:'70%',
-    position: 'absolute',
-    width: '50%',
-    display: 'flex',
-    alignItems: 'center',
-    textAlign: 'center',
-})
-  
+    
 const MainGrid = styled(Grid)({
     height: '100%',
     display: 'flex',

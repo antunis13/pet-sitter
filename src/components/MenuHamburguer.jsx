@@ -8,7 +8,8 @@ import {
   ListItemButton,
   Menu,
   MenuItem,
-  Divider
+  Divider,
+  Collapse
 } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu'
 import Link from "next/link"
@@ -28,16 +29,15 @@ const LinkMenu = styled(Link)(({ theme }) => ({
 
 const MenuHamburguer = ({className}) =>{
   const [openDrawer, setOpenDrawer] = useState(false)
-  const [anchorMenu, setAnchorMenu ] = useState(null)
-  const openMenu = Boolean(anchorMenu)
+  const [anchorMenu, setAnchorMenu ] = useState(false)
 
   const handleClick = (event) => {
     event.stopPropagation()
-    setAnchorMenu(event.currentTarget)
+    setAnchorMenu(!anchorMenu)
   }
   
   const handleClose = () => {
-    setAnchorMenu(null)
+    setAnchorMenu(false)
   }
 
   const toggleDrawer = (open) => (event) => {
@@ -75,44 +75,30 @@ const MenuHamburguer = ({className}) =>{
             style={{textTransform: 'none'}}
           >
             <ListItemTxt primary="Serviços" />
-            <i class="fa-solid fa-angle-down fa-sm" style={{color: '#ed7a8c'}}></i>
+            <i 
+              class="fa-solid fa-angle-down fa-sm" 
+              style={{
+                color: '#ed7a8c', 
+              }}
+            ></i>
           </ListItemButton>
-          <Menu
-            PaperProps={{
-                sx:{
-                    boxShadow: 'none',
-                    borderRadius: '0',
-                    padding: '0px 10px 5px 10px',
-                    backgroundColor: 'primary.main'
-                }
-            }}
-            id='customized-menu'
-            open={openMenu}
-            anchorEl={anchorMenu}
-            keepMounted
-            onClose={handleClose}
-            
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right'
-            }}
-          >
+          <Collapse in={anchorMenu} timeout={{enter: 500, exit: 300}} unmountOnExit>
             <LinkMenu href='/services/jeniSpace' passHref>
-                <MenuItem onClick={handleClose}>Espaço Jeni</MenuItem>
+              <MenuItem onClick={handleClose}>Espaço Jeni</MenuItem>
             </LinkMenu>
             <Divider />
             <LinkMenu href='/services/dayCare' passHref>
-                <MenuItem  onClick={handleClose}>Day Care</MenuItem>
+              <MenuItem  onClick={handleClose}>Day Care</MenuItem>
             </LinkMenu>
             <Divider />
             <LinkMenu href='/services/dogWalk' passHref>
-                <MenuItem  onClick={handleClose}>Dog Walk</MenuItem>
+              <MenuItem  onClick={handleClose}>Dog Walk</MenuItem>
             </LinkMenu>
             <Divider />
             <LinkMenu href='/services/petSitter' passHref>
-                <MenuItem  onClick={handleClose}>Pet Sitter</MenuItem>
-            </LinkMenu>
-          </Menu>       
+              <MenuItem  onClick={handleClose}>Pet Sitter</MenuItem>
+            </LinkMenu>      
+          </Collapse>
         </>
         <Link href="/contact" passHref>
           <ListItemButton component="a">
