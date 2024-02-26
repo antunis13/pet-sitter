@@ -78,7 +78,7 @@ const Contact = () => {
       />
       <MiddleGrid container columnGap={20}>
         <Grid item xs={12} marginBottom={5} padding={3}>
-          <Typography variant="h4">
+          <Typography variant="h4" color='primary.pink'>
             Entre em contato com a gente
           </Typography>
         </Grid>
@@ -168,7 +168,7 @@ const Contact = () => {
                       <FormDiv>
                         {
                           isSubmitting
-                          ?<CircularProgress />
+                          ?<CircularProgress color="secondary"/>
                           :
                           <Button type="submit" variant="outlined" color="secondary">
                             Enviar

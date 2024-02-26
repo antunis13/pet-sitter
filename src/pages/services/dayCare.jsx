@@ -23,7 +23,8 @@ const GridImage = styled(Grid)`
 
 const BoxGrid = styled(Grid)(({theme}) => ({
     padding: theme.spacing(5),
-    margin: theme.spacing(10),
+    marginTop: theme.spacing(10),
+    marginBottom: theme.spacing(10),
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -46,7 +47,9 @@ const DayCare = () =>{
                 backgroundColor='primary.main'
             >
                 <Grid item xs={12} >
-                    <Typography variant="h3">Day Care</Typography>
+                    <Typography variant="h3" color='primary.pink' fontWeight='bold'>
+                        Day Care
+                    </Typography>
                 </Grid>
                 <GridImage 
                     item xs={10} sm={9} md={6} lg={3} xl={3} 
@@ -60,19 +63,24 @@ const DayCare = () =>{
                 </GridImage>
                 <BoxGrid 
                     item 
-                    xs={10} 
+                    xs={12} 
                     sm={9}
                     md={6}
                     lg={6}
                     xl={6}
                     borderRight='2px solid'
+                    marginLeft={15}
                     borderColor='primary.pink'
                 >
-                <Typography variant="h6" >
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <Typography variant="h5" textAlign='left' color='secondary.main' >
+                    Os cuidados do Day care acontecem na residência do nosso time, onde são realizados os cuidados de alimentação, reposição de água, higiene, recreação e passeio no dog place durante o dia.
+                    <br />
+                    Com atividades de enriquecimento ambiental, brincadeiras com estímulos cognitivos, momento SPA e com padrão de hospedagem exclusiva para o seu pet. 
+                    <br />
+                    O serviços Day care atende tutores que buscam companhia para o seu pet, com moniramento 24h/dia, mantendo sua rotina e hábitos, assim evitando estresse por separação.                
                 </Typography>
                 <br/>
-                <Typography variant="h3" fontWeight='bold'>
+                <Typography variant="h3" color='primary.pink' fontWeight='bold'>
                     Preços
                 </Typography>
                 <br/>

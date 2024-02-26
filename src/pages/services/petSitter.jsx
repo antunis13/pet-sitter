@@ -22,7 +22,8 @@ const GridImage = styled(Grid)`
 
 const BoxGrid = styled(Grid)(({theme}) => ({
     padding: theme.spacing(5),
-    margin: theme.spacing(10),
+    marginTop: theme.spacing(10),
+    marginBottom: theme.spacing(10),
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -59,7 +60,7 @@ const PetSitter = () =>{
                 </GridImage>
                 <BoxGrid 
                     item 
-                    xs={10} 
+                    xs={12} 
                     sm={9}
                     md={6}
                     lg={6}
@@ -67,8 +68,12 @@ const PetSitter = () =>{
                     borderRight='2px solid'
                     borderColor='primary.pink'
                 >
-                    <Typography variant="h6" >
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <Typography variant="h6" textAlign='left'>
+                        ✓ A visita de Pet Sitter é realizada na residência do tutor, onde são realizados os cuidados de alimentação, reposição de água, higiene, recreação e passeio, sendo uma ou duas visitas ao dia.
+                        <br/>
+                        ✓ São oferecidas atividades de recreação, para gasto energético e muita diversão para os pets. 
+                        <br/>
+                        ✓ O serviço Pet Sitter atende tutores que preferem manter o pet no conforto da sua residência, mantendo sua rotina e hábitos, assim evitando estresse e ansiedade por mudança de local.                     
                     </Typography>
                     <br/>
                     <Typography variant="h3" fontWeight='bold'>

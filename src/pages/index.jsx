@@ -38,14 +38,68 @@ const IconGrid = styled(Grid)(({theme}) => ({
   padding: 10,
 }))
 
-const TitleTypography = styled(Typography)(({theme}) =>({
-  color: theme.palette.primary.pink,
-  fontFamily: 'QuentimPro',
-}))
+const TitleTypography = styled(Typography)`
+  @media(max-width: 780px){
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+`
+const TxtTypography = styled(Typography)`
+  margin-left: 200px;
+  text-align: left;
+  @media (max-width: 780px){
+    margin-left: 0px;
+  }
+  @media(max-width: 375px){
+    font-size: 30px;
+  }
+`
+const TxtTypography2 = styled(Typography)`
+  position: relative;
+  width: 180px;
+  left: 195px;
+  bottom: 50px;
+  @media(min-width: 375px) and (max-width: 425px){
+    left: 170px;
+  }
+  @media(max-width: 374px){
+    width: 160px;
+    font-size: 25px;
+    left: 150px;
+    bottom: 30px;
+  }
+`
+const StyledBox = styled(Box)`
+  margin-left: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  width: 340px;
 
-const TxtTypography = styled(Typography)(({theme}) =>({
+  @media(max-width: 780px){
+    margin-left: 0px;
+  }
+`
+
+const PinkTyp = styled(Typography)`
+  font-weight: bold;
+  margin-left: 35px;
+  @media(min-width: 375px) and (max-width: 425px){
+    font-size: 50px;
+  }
+  @media(max-width: 374px){
+    font-size: 40px;
+  }
+`
+
+const VerticalTyp = styled(Typography)(({theme}) =>({
   color: theme.palette.secondary.main,
-  padding: theme.spacing(4),
+  transform: 'rotate(-90deg)',
+  position: 'relative',
+  left:-10,
+  top:120,
+  marginTop: -60,
 }))
 
 const GridCarousel = styled(Grid)({
@@ -94,24 +148,39 @@ const Home = () => {
         image={Background}
       />
       <MiddleGrid>
-        <Grid item xs={12} sm={11} md={12} lg={12} xl={12}>
-          <TitleTypography variant="h2">
-            Quais serviços oferecemos?
-          </TitleTypography>
-        </Grid>
         <Grid 
           item
-          xs={10}
-          sm={9}
-          md={9}
+          xs={12}
+          sm={7}
+          md={7}
           lg={8}
-          xl={8}
+          xl={6}
           justifyContent='center'
           alignItems='center'
+          marginTop={5}
         >
-          <TxtTypography variant="h6">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <TxtTypography color='secondary.main' variant="h4">
+            Na Jeni, cada detalhe é <br/> cuidadosamente planejado para 
           </TxtTypography>
+          <StyledBox >
+            <VerticalTyp variant="h4">
+              uma
+            </VerticalTyp> 
+            <PinkTyp variant="h2" color='primary.pink' lineHeight={1} >
+              proporcionar experiência única
+            </PinkTyp>
+            <TxtTypography2 variant="h4"
+              color='secondary.main'
+              lineHeight={1}
+            >
+              para você e seu pet
+            </TxtTypography2>
+          </StyledBox>
+        </Grid>
+        <Grid item xs={12} sm={11} md={12} lg={12} xl={12}>
+          <TitleTypography color='primary.pink' variant="h2">
+            Conheça nossos serviços
+          </TitleTypography>
         </Grid>
 
         <BoxContainerIcon>
@@ -122,7 +191,7 @@ const Home = () => {
             flexWrap='nowrap'
           >
           <IconGrid item  xs={9} sm={8} md={6} lg={2} xl={4} > 
-            <Link href='services#dogWalk'>
+            <Link href='/services/dogWalk'>
               <Image 
                 alt='Dog Walk icon'
                 src={DogWalk}
@@ -136,7 +205,7 @@ const Home = () => {
             </Link>
           </IconGrid>
           <IconGrid item xs={9} sm={8} md={6} lg={2} xl={4}> 
-            <Link href='services#petSitter'>
+            <Link href='/services/petSitter'>
               <Image
                 src={PetSitter}  
                 alt="Pet sitter icon"
@@ -150,7 +219,7 @@ const Home = () => {
             </Link>
           </IconGrid>
           <IconGrid item xs={9} sm={8} md={6} lg={2} xl={4}> 
-            <Link href='/services#dayCare' >
+            <Link href='/services/dayCare' >
               <Image
                 src={DayCare}  
                 alt="Day care icon"

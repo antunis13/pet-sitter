@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import localFont from 'next/font/local'
 
 import{
     AppBar,
@@ -20,6 +21,7 @@ import logo from '../../public/images/Logotipo_Jeni-14.png'
 
 import { styled } from '@mui/material/styles'
 import style from '../Components.module.css'
+
 
 const HeaderGrid = styled(Grid)(({theme}) =>({
     alignItems: 'center',
@@ -85,7 +87,7 @@ const Header = () => {
                             </Link>
                         </GridPages>
 
-                        <GridPages item xs={1} sm={8} md={2} lg={2} xl={2} textAlign='center'>
+                        <GridPages item xs={2} sm={8} md={2} lg={2} xl={2} textAlign='center'>
                             <Link href='/'>
                                 <Image
                                     alt='Logo'

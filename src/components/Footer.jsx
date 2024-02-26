@@ -47,9 +47,9 @@ const ImageLogo = styled(Image)`
     height: 150px;
 
     @media(max-width: 780px){
-        width: 280px;
-        height: 280px;
-        margin-top: 40px;
+        width: 300px;
+        height: 300px;
+        margin-top: 30px;
         margin-left: 35px;
     }
 
@@ -90,7 +90,7 @@ const Footer = () =>{
                     xs={3}
                     display='block'
                 >
-                    <Grid item xs={1} sm={2} md={2} lg={2} xl={3} >                   
+                    <Grid item xs={2} sm={2} md={2} lg={2} xl={3} >                   
                         <ImageLogo
                             alt='Logo'
                             src={logoJeni}
