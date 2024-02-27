@@ -3,7 +3,6 @@ import {
   Typography, 
   Grid,
   TextField,
-  Box,
   Button,
   CircularProgress,
 } from "@mui/material"
@@ -14,38 +13,22 @@ import { initialValues, validationSchema } from "./formValues"
 
 import BackgroundGrid from "@/components/BackgroundGrid"
 import MiddleGrid from "@/components/MiddleGrid"
+
 import useToasty from '../../contexts/Toasty'
 
 import Background from '../../public/images/Portfolio_Jeni08.jpg'
 import Email from '../../public/images/mail.png'
 
-import { styled } from "@mui/material/styles"
+import{
+  FormBox,
+  ContactBox,
+  ContactTyp,
+  FormDiv,
+  GridForm,
+} from './styles'
+
 import { useTheme } from "@mui/material/styles"
 
-
-const FormBox = styled(Box)({
-  textAlign: 'start'
-})
-
-const ContactBox = styled(Box)(({theme}) => ({
-  display: 'flex',
-  padding: theme.spacing(4),
-}))
-
-const ContactTyp = styled(Typography)(({theme}) =>({
-  marginLeft: theme.spacing(3),
-}))
-
-const FormDiv = styled('div')(({theme}) => ({
-  marginTop: theme.spacing(3),
-  marginBottom: theme.spacing(3),
-}))
-
-const GridForm = styled(Grid)({
-  padding: '10px',
-  margin: '10px'
-})
-  
 
 const Contact = () => {
   const theme = useTheme()

@@ -1,14 +1,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import localFont from 'next/font/local'
-
 import{
-    AppBar,
     Toolbar,
-    Typography,
     Container,
-    Grid,
     Menu,
     MenuItem,
     Button,
@@ -19,36 +14,15 @@ import MenuHamburguer from '../MenuHamburguer'
 
 import logo from '../../public/images/Logotipo_Jeni-14.png'
 
-import { styled } from '@mui/material/styles'
+import { 
+    HeaderGrid,
+    HeaderAppBar,
+    TypographyStyle,
+    GridPages,
+    LinkMenu,
+} from './Header.styles'
+
 import style from '../Components.module.css'
-
-
-const HeaderGrid = styled(Grid)(({theme}) =>({
-    alignItems: 'center',
-    marginLeft: theme.spacing(30),
-}))
-
-const HeaderAppBar = styled(AppBar)({
-    display: 'flex',
-    justifyContent: 'center',
-    padding: 10,
-})
-
-const TypographyStyle = styled(Typography)`
-    &:hover{
-        color:  ${(props) => props.theme.palette.secondary.main};
-    }
-`
-const GridPages = styled(Grid)({
-    display: 'flex',
-    justifyContent: 'center'
-})
-
-const LinkMenu = styled(Link)(({ theme }) => ({
-    textDecoration: 'none',
-    color: theme.palette.primary.pink,
-})) 
-
 
 const Header = () => {
     const [anchorMenu, setAnchorMenu ] = useState(null)

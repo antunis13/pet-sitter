@@ -2,33 +2,16 @@ import Image from "next/image"
 
 import { Grid, Typography } from "@mui/material"
 
-import { styled } from "@mui/material/styles"
-
 import BackgroundGrid from "@/components/BackgroundGrid"
 import MiddleGrid from "@/components/MiddleGrid"
 
 import Background from '../../public/images/Avatar_Jeni1.jpg'
 import DogWalkService from '../../public/images/dog.png'
 
-const GridImage = styled(Grid)`
-  margin-left: 40px;
-  display: flex;
-  align-items: center;
-
-  @media(max-width: 780px){
-    margin-left: 20px;
-  } 
-`
-
-const BoxGrid = styled(Grid)(({theme}) => ({
-    padding: theme.spacing(5),
-    marginTop: theme.spacing(10),
-    marginBottom: theme.spacing(10),
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    textAlign: 'center',
-}))
+import {
+    GridImage,
+    BoxGrid
+} from './styles'
 
 const DogWalk = () => {
     return(
