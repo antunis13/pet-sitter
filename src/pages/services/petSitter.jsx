@@ -8,10 +8,7 @@ import MiddleGrid from "@/components/MiddleGrid"
 import Background from '../../public/images/Avatar_Jeni1.jpg'
 import PetSitterService from '../../public/images/veterinary.png'
 
-import {
-    GridImage,
-    BoxGrid
-} from './styles'
+import ServicesWrapper from "./styles"
 
 const PetSitter = () =>{
     return(
@@ -31,7 +28,7 @@ const PetSitter = () =>{
                 <Grid item xs={12} >
                     <Typography variant="h3">Pet Sitter</Typography>
                 </Grid>
-                <GridImage 
+                <ServicesWrapper.GridImage 
                     item xs={10} sm={9} md={6} lg={3} xl={3} 
                 >
                 <Image 
@@ -40,8 +37,8 @@ const PetSitter = () =>{
                     width={400}
                     height={300}
                 />
-                </GridImage>
-                <BoxGrid 
+                </ServicesWrapper.GridImage>
+                <ServicesWrapper.BoxGrid 
                     item 
                     xs={12} 
                     sm={9}
@@ -80,7 +77,7 @@ const PetSitter = () =>{
                         </Typography>
                     </Grid>
                 
-                </BoxGrid>
+                </ServicesWrapper.BoxGrid>
             </MiddleGrid>
         </>
     )

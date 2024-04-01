@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material"
 
 import { styled } from "@mui/material/styles"
+import SCWrapper from "../contact/styles"
 
 const GridImage = styled(Grid)`
   margin-left: 40px;
@@ -13,16 +14,18 @@ const GridImage = styled(Grid)`
 `
 
 const BoxGrid = styled(Grid)(({theme}) => ({
-    padding: theme.spacing(5),
-    marginTop: theme.spacing(10),
-    marginBottom: theme.spacing(10),
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    textAlign: 'center',
+  padding: theme.spacing(5),
+  marginTop: theme.spacing(10),
+  marginBottom: theme.spacing(10),
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  textAlign: 'center',
 }))
 
-export {
-    GridImage,
-    BoxGrid
+const ServicesWrapper = { 
+  GridImage,
+  BoxGrid,
 }
+
+export default ServicesWrapper

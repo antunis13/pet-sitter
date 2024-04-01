@@ -29,11 +29,13 @@ const GridForm = styled(Grid)({
     padding: '10px',
     margin: '10px'
 })
-    
-export {
+
+const ContactWrapper = {
     FormBox,
     ContactBox,
     ContactTyp,
     FormDiv,
     GridForm,
 }
+
+export default ContactWrapper

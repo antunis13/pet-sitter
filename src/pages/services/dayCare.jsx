@@ -8,11 +8,7 @@ import MiddleGrid from "@/components/MiddleGrid"
 import Background from '../../public/images/Avatar_Jeni1.jpg'
 import DayCareService from '../../public/images/dog-food.png'
 
-
-import {
-    GridImage,
-    BoxGrid
-} from './styles'
+import ServicesWrapper from "./styles"
 
 const DayCare = () =>{
     return(
@@ -34,7 +30,7 @@ const DayCare = () =>{
                         Day Care
                     </Typography>
                 </Grid>
-                <GridImage 
+                <ServicesWrapper.GridImage 
                     item xs={10} sm={9} md={6} lg={3} xl={3} 
                 >
                 <Image 
@@ -43,8 +39,8 @@ const DayCare = () =>{
                     width={400}
                     height={300}
                 />
-                </GridImage>
-                <BoxGrid 
+                </ServicesWrapper.GridImage>
+                <ServicesWrapper.BoxGrid 
                     item 
                     xs={12} 
                     sm={9}
@@ -56,11 +52,11 @@ const DayCare = () =>{
                     borderColor='primary.pink'
                 >
                 <Typography variant="h5" textAlign='left' color='secondary.main' >
-                    Os cuidados do Day care acontecem na residência do nosso time, onde são realizados os cuidados de alimentação, reposição de água, higiene, recreação e passeio no dog place durante o dia.
+                    ✓ Os cuidados do Day care acontecem na residência do nosso time, onde são realizados os cuidados de alimentação, reposição de água, higiene, recreação e passeio no dog place durante o dia.
                     <br />
-                    Com atividades de enriquecimento ambiental, brincadeiras com estímulos cognitivos, momento SPA e com padrão de hospedagem exclusiva para o seu pet. 
+                    ✓ Com atividades de enriquecimento ambiental, brincadeiras com estímulos cognitivos, momento SPA e com padrão de hospedagem exclusiva para o seu pet. 
                     <br />
-                    O serviços Day care atende tutores que buscam companhia para o seu pet, com moniramento 24h/dia, mantendo sua rotina e hábitos, assim evitando estresse por separação.                
+                    ✓ O serviços Day care atende tutores que buscam companhia para o seu pet, com moniramento 24h/dia, mantendo sua rotina e hábitos, assim evitando estresse por separação.                
                 </Typography>
                 <br/>
                 <Typography variant="h3" color='primary.pink' fontWeight='bold'>
@@ -83,7 +79,7 @@ const DayCare = () =>{
                         180 R$
                     </Typography>
                 </Grid>
-                </BoxGrid>
+                </ServicesWrapper.BoxGrid>
             </MiddleGrid>
         </>
     )

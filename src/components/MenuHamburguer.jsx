@@ -83,10 +83,6 @@ const MenuHamburguer = ({className}) =>{
             ></i>
           </ListItemButton>
           <Collapse in={anchorMenu} timeout={{enter: 500, exit: 300}} unmountOnExit>
-            <LinkMenu href='/services/jeniSpace' passHref>
-              <MenuItem onClick={handleClose}>Espaço Jeni</MenuItem>
-            </LinkMenu>
-            <Divider />
             <LinkMenu href='/services/dayCare' passHref>
               <MenuItem  onClick={handleClose}>Day Care</MenuItem>
             </LinkMenu>

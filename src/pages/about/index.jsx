@@ -11,18 +11,7 @@ import Background from '../../public/images/Portfolio_Jeni06.jpg'
 import Efeito1 from '../../public/images/pawprint.png'
 import Wave from '../../public/images/wave.svg'
 
-import{
-  ImageEffect,
-  WaveImg,
-  GridAbout,
-  BoxAbout,
-  TypographyAbout,
-  TitleTypography,
-  TxtTypography,
-  PinkTyp,
-  StyledTyp,
-  StyledBox,
-} from './styles'
+import AboutWrapper from "./styles"
 
 const About = () => {
   return (
@@ -33,9 +22,9 @@ const About = () => {
 
       <MiddleGrid container>
         <Grid item xs={12}>
-          <TitleTypography variant="h2" color='primary.pink'>
+          <AboutWrapper.TitleTypography variant="h2" color='primary.pink'>
             Nosso objetivo
-          </TitleTypography>
+          </AboutWrapper.TitleTypography>
         </Grid>
         <Grid 
           item
@@ -48,13 +37,13 @@ const About = () => {
           alignItems='center'
           marginTop={5}
         >
-          <TxtTypography variant="h5" color='secondary.main'>
+          <AboutWrapper.TxtTypography variant="h5" color='secondary.main'>
             A marca Jeni nasceu através <br/> de muito amor por animais, com a missão de          
-          </TxtTypography>
-          <StyledBox>
-            <PinkTyp variant="h2" lineHeight={1} >
+          </AboutWrapper.TxtTypography>
+          <AboutWrapper.StyledBox>
+            <AboutWrapper.PinkTyp variant="h2" lineHeight={1} >
               proporcionar qualidade de vida
-            </PinkTyp>
+            </AboutWrapper.PinkTyp>
             <Typography variant="h4"
               width={190}
               color='secondary.main'
@@ -65,7 +54,7 @@ const About = () => {
             >
               e amor para os pets.
             </Typography>
-          </StyledBox>
+          </AboutWrapper.StyledBox>
         </Grid>
 
         <Grid 
@@ -78,13 +67,13 @@ const About = () => {
           xl={7}
           
         >
-          <StyledTyp 
+          <AboutWrapper.StyledTyp 
             variant="h5" 
             color='secondary.main'
             textAlign='left'  
           >
             Nosso propósito é permitir que as famílias viajem tranquilas, sabendo que seus pets estão em ótimas mãos, com atendimento dedicado, empatia e responsabilidade.
-          </StyledTyp> 
+          </AboutWrapper.StyledTyp> 
         </Grid>
       </MiddleGrid>
 
@@ -100,7 +89,7 @@ const About = () => {
               </Typography>
             </Grid>
             <Grid item display='flex' >
-              <ImageEffect 
+              <AboutWrapper.ImageEffect 
                 alt='Logotipo'
                 src={Efeito1}
                 width={35}
@@ -112,7 +101,7 @@ const About = () => {
             </Grid>
 
             <Grid item display='flex' >
-              <ImageEffect 
+              <AboutWrapper.ImageEffect 
                 alt='Logotipo'
                 src={Efeito1}
                 width={35}
@@ -124,7 +113,7 @@ const About = () => {
             </Grid>
 
             <Grid item display='flex' >
-              <ImageEffect 
+              <AboutWrapper.ImageEffect 
                 alt='Logotipo'
                 src={Efeito1}
                 width={35}
@@ -136,7 +125,7 @@ const About = () => {
             </Grid>
             
             <Grid item display='flex' >
-              <ImageEffect 
+              <AboutWrapper.ImageEffect 
                 alt='Logotipo'
                 src={Efeito1}
                 width={35}
@@ -147,7 +136,7 @@ const About = () => {
               </Typography>
             </Grid>
             <Grid item display='flex' >
-              <ImageEffect 
+              <AboutWrapper.ImageEffect 
                 alt='Logotipo'
                 src={Efeito1}
                 width={35}
@@ -161,15 +150,15 @@ const About = () => {
         </Container>
       </Grid>
 
-      <GridAbout container>
+      <AboutWrapper.GridAbout container>
         <Grid item xs={12}>
           <Typography variant="h3" color='primary.pink'>
             Conheça o time Jeni
           </Typography>
         </Grid>
 
-        <BoxAbout item xs={10} sm={9} md={6} lg={3} xl={3}>
-          <WaveImg 
+        <AboutWrapper.BoxAbout item xs={10} sm={9} md={6} lg={3} xl={3}>
+          <AboutWrapper.WaveImg 
             alt="efeito"
             src={Wave}
             height={121}
@@ -184,17 +173,17 @@ const About = () => {
           <Typography variant="h5" color='primary.main'>
             CEO 
           </Typography>
-          <TypographyAbout variant="h6">
+          <AboutWrapper.TypographyAbout variant="h6">
             Formada em auxiliar veterinária.<br/>
             Mais de 8 anos de experiência em cuidados de pets.<br/>
             Experiência em clínica médica de pequenos animais.<br/> 
             Estudante de Medicina Veterinária.<br/>
             Amante de animais.<br/>
-          </TypographyAbout>
-        </BoxAbout>
+          </AboutWrapper.TypographyAbout>
+        </AboutWrapper.BoxAbout>
 
-        <BoxAbout item  xs={10} sm={9} md={6} lg={3} xl={3}>
-          <WaveImg 
+        <AboutWrapper.BoxAbout item  xs={10} sm={9} md={6} lg={3} xl={3}>
+          <AboutWrapper.WaveImg 
             alt="efeito"
             src={Wave}
             height={121}
@@ -209,15 +198,15 @@ const About = () => {
           <Typography variant="h5" color='primary.main'>
             Pet Sitter & Dog Walker 
           </Typography>
-          <TypographyAbout variant="h6">
+          <AboutWrapper.TypographyAbout variant="h6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, at, ipsam illum delectus sequi qui unde quas odio animi consequuntur doloremque? Nobis doloribus natus quidem, consequatur sed debitis accusantium ratione.
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem veritatis minima recusandae perspiciatis amet facilis rerum provident praesentium harum! Porro quas quae ipsum delectus iure hic in, mollitia quasi exercitationem!
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto doloribus nemo quas esse illo facere quia exercitationem, velit sint pariatur voluptatibus dolorem laboriosam inventore autem. Itaque praesentium sed a quia?
-          </TypographyAbout>
-        </BoxAbout>
+          </AboutWrapper.TypographyAbout>
+        </AboutWrapper.BoxAbout>
 
-        <BoxAbout item xs={10} sm={9} md={6} lg={3} xl={3}>
-          <WaveImg 
+        <AboutWrapper.BoxAbout item xs={10} sm={9} md={6} lg={3} xl={3}>
+          <AboutWrapper.WaveImg 
             alt="efeito"
             src={Wave}
             height={121}
@@ -232,13 +221,13 @@ const About = () => {
           <Typography variant="h5" color='primary.main'>
             Pet Sitter & Dog Walker 
           </Typography>
-          <TypographyAbout variant="h6">
+          <AboutWrapper.TypographyAbout variant="h6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, at, ipsam illum delectus sequi qui unde quas odio animi consequuntur doloremque? Nobis doloribus natus quidem, consequatur sed debitis accusantium ratione.
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem veritatis minima recusandae perspiciatis amet facilis rerum provident praesentium harum! Porro quas quae ipsum delectus iure hic in, mollitia quasi exercitationem!
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto doloribus nemo quas esse illo facere quia exercitationem, velit sint pariatur voluptatibus dolorem laboriosam inventore autem. Itaque praesentium sed a quia?
-          </TypographyAbout>
-        </BoxAbout>
-      </GridAbout>
+          </AboutWrapper.TypographyAbout>
+        </AboutWrapper.BoxAbout>
+      </AboutWrapper.GridAbout>
     </>
   )
 }

@@ -102,17 +102,18 @@ const GridIconContainer = styled(Grid)`
    flex-wrap: wrap;
   }
 `
-
-export {
-    BoxContainerIcon,
-    IconGrid,
-    GridIconContainer,
-    GridCarousel,
-    PaperCarousel,
-    TitleTypography,
-    TxtTypography,
-    TxtTypography2,
-    StyledBox,
-    VerticalTyp,
-    PinkTyp
+const HomeWrapper = {
+  BoxContainerIcon,
+  IconGrid,
+  GridIconContainer,
+  GridCarousel,
+  PaperCarousel,
+  TitleTypography,
+  TxtTypography,
+  TxtTypography2,
+  StyledBox,
+  VerticalTyp,
+  PinkTyp,
 }
+
+export default HomeWrapper

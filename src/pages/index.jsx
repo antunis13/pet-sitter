@@ -1,5 +1,6 @@
 
 import Image from "next/image"
+import Head from "next/head"
 import Link from "next/link"
 import { 
   Grid, 
@@ -20,19 +21,8 @@ import Barto from '../public/images/Barto.png'
 import Dolinha from '../public/images/Dolinha.png'
 import Mel from '../public/images/Mel.png'
 
-import {
-  BoxContainerIcon,
-  IconGrid,
-  GridIconContainer,
-  GridCarousel,
-  PaperCarousel,
-  TitleTypography,
-  TxtTypography,
-  TxtTypography2,
-  StyledBox,
-  VerticalTyp,
-  PinkTyp
-} from '../styles/home.styles'
+
+import HomeWrapper from "../styles/home.styles"
 
 import { useTheme } from "@mui/material/styles"
 
@@ -74,38 +64,38 @@ const Home = () => {
           alignItems='center'
           marginTop={5}
         >
-          <TxtTypography color='secondary.main' variant="h4">
+          <HomeWrapper.TxtTypography color='secondary.main' variant="h4">
             Na Jeni, cada detalhe é <br/> cuidadosamente planejado para 
-          </TxtTypography>
-          <StyledBox >
-            <VerticalTyp variant="h4">
+          </HomeWrapper.TxtTypography>
+          <HomeWrapper.StyledBox >
+            <HomeWrapper.VerticalTyp variant="h4">
               uma
-            </VerticalTyp> 
-            <PinkTyp variant="h2" color='primary.pink' lineHeight={1} >
+            </HomeWrapper.VerticalTyp> 
+            <HomeWrapper.PinkTyp variant="h2" color='primary.pink' lineHeight={1} >
               proporcionar experiência única
-            </PinkTyp>
-            <TxtTypography2 variant="h4"
+            </HomeWrapper.PinkTyp>
+            <HomeWrapper.TxtTypography2 variant="h4"
               color='secondary.main'
               lineHeight={1}
             >
               para você e seu pet
-            </TxtTypography2>
-          </StyledBox>
+            </HomeWrapper.TxtTypography2>
+          </HomeWrapper.StyledBox>
         </Grid>
         <Grid item xs={12} sm={11} md={12} lg={12} xl={12}>
-          <TitleTypography color='primary.pink' variant="h2">
+          <HomeWrapper.TitleTypography color='primary.pink' variant="h2">
             Conheça nossos serviços
-          </TitleTypography>
+          </HomeWrapper.TitleTypography>
         </Grid>
 
-        <BoxContainerIcon>
-          <GridIconContainer
+        <HomeWrapper.BoxContainerIcon>
+          <HomeWrapper.GridIconContainer
             container 
             spacing={4} 
             display='flex' 
             flexWrap='nowrap'
           >
-          <IconGrid item  xs={9} sm={8} md={6} lg={2} xl={4} > 
+          <HomeWrapper.IconGrid item  xs={9} sm={8} md={6} lg={2} xl={4} > 
             <Link href='/services/dogWalk'>
               <Image 
                 alt='Dog Walk icon'
@@ -118,8 +108,8 @@ const Home = () => {
                 Dog Walk
               </Typography>
             </Link>
-          </IconGrid>
-          <IconGrid item xs={9} sm={8} md={6} lg={2} xl={4}> 
+          </HomeWrapper.IconGrid>
+          <HomeWrapper.IconGrid item xs={9} sm={8} md={6} lg={2} xl={4}> 
             <Link href='/services/petSitter'>
               <Image
                 src={PetSitter}  
@@ -132,8 +122,8 @@ const Home = () => {
                 Pet Sitter
               </Typography>
             </Link>
-          </IconGrid>
-          <IconGrid item xs={9} sm={8} md={6} lg={2} xl={4}> 
+          </HomeWrapper.IconGrid>
+          <HomeWrapper.IconGrid item xs={9} sm={8} md={6} lg={2} xl={4}> 
             <Link href='/services/dayCare' >
               <Image
                 src={DayCare}  
@@ -146,9 +136,9 @@ const Home = () => {
                 Day Care
               </Typography>
             </Link>
-          </IconGrid>
-          </GridIconContainer>
-        </BoxContainerIcon>
+          </HomeWrapper.IconGrid>
+          </HomeWrapper.GridIconContainer>
+        </HomeWrapper.BoxContainerIcon>
       </MiddleGrid>
       
       <Grid
@@ -165,13 +155,13 @@ const Home = () => {
             Feedbacks
           </Typography>
         </Grid>
-        <GridCarousel item xs={6} marginBottom={10}>
+        <HomeWrapper.GridCarousel item xs={6} marginBottom={10}>
           <Carousel
             animation='slide'
-            duration='700'
+            duration='800'
           >
             {feedbacks.map((feedback, index) => (
-              <PaperCarousel key={index}>
+              <HomeWrapper.PaperCarousel key={index}>
                 <Avatar   
                   
                   sx={{  width: 80, height: 80, margin: 'auto' }} 
@@ -195,10 +185,10 @@ const Home = () => {
                 >
                   {feedback.text}
                 </Typography>
-              </PaperCarousel>
+              </HomeWrapper.PaperCarousel>
             ))}
           </Carousel>
-        </GridCarousel>
+        </HomeWrapper.GridCarousel>
       </Grid>
     </>
   )

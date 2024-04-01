@@ -9,7 +9,7 @@ import {
 
 import axios from "axios"
 import { Formik } from "formik"
-import { initialValues, validationSchema } from "./formValues"
+import formValuesWrapper from "./formValues"
 
 import BackgroundGrid from "@/components/BackgroundGrid"
 import MiddleGrid from "@/components/MiddleGrid"
@@ -19,13 +19,7 @@ import useToasty from '../../contexts/Toasty'
 import Background from '../../public/images/Portfolio_Jeni08.jpg'
 import Email from '../../public/images/mail.png'
 
-import{
-  FormBox,
-  ContactBox,
-  ContactTyp,
-  FormDiv,
-  GridForm,
-} from './styles'
+import ContactWrapper from "./styles"
 
 import { useTheme } from "@mui/material/styles"
 
@@ -65,10 +59,10 @@ const Contact = () => {
             Entre em contato com a gente
           </Typography>
         </Grid>
-        <GridForm item xs={10} sm={9}  md={6} lg={4} xl={4}>
+        <ContactWrapper.GridForm item xs={10} sm={9}  md={6} lg={4} xl={4}>
           <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema}
+            initialValues={formValuesWrapper.initialValues}
+            validationSchema={formValuesWrapper.validationSchema}
             onSubmit={handleFormSubmit}
           >
             {
@@ -81,8 +75,8 @@ const Contact = () => {
               }) => {
                 return(
                   <form onSubmit={handleSubmit}>
-                    <FormBox >
-                      <FormDiv>
+                    <ContactWrapper.FormBox >
+                      <ContactWrapper.FormDiv>
                         <Typography>
                           Nome Completo
                         </Typography>
@@ -97,8 +91,8 @@ const Contact = () => {
                           error={errors.name}
                           helperText={errors.name}
                         />
-                      </FormDiv>
-                      <FormDiv>       
+                      </ContactWrapper.FormDiv>
+                      <ContactWrapper.FormDiv>       
                         <Typography>
                           E-mail
                         </Typography>
@@ -113,8 +107,8 @@ const Contact = () => {
                           error={errors.email}
                           helperText={errors.email}
                         />
-                      </FormDiv>
-                      <FormDiv>
+                      </ContactWrapper.FormDiv>
+                      <ContactWrapper.FormDiv>
                         <Typography>
                           Telefone
                         </Typography>
@@ -129,8 +123,8 @@ const Contact = () => {
                           error={errors.tel}
                           helperText={errors.tel}
                         />
-                      </FormDiv>
-                      <FormDiv>
+                      </ContactWrapper.FormDiv>
+                      <ContactWrapper.FormDiv>
                         <Typography>
                           Mensagem
                         </Typography>
@@ -147,8 +141,8 @@ const Contact = () => {
                           error={errors.message}
                           helperText={errors.message}
                         />
-                      </FormDiv>
-                      <FormDiv>
+                      </ContactWrapper.FormDiv>
+                      <ContactWrapper.FormDiv>
                         {
                           isSubmitting
                           ?<CircularProgress color="secondary"/>
@@ -157,50 +151,50 @@ const Contact = () => {
                             Enviar
                           </Button>
                         }
-                      </FormDiv>
-                    </FormBox>  
+                      </ContactWrapper.FormDiv>
+                    </ContactWrapper.FormBox>  
                   </form>
 
                 )
               }
             }
           </Formik>
-        </GridForm>
+        </ContactWrapper.GridForm>
         <Grid item xs={10} sm={9} md={6} lg={3} xl={3}>
-          <ContactBox>
+          <ContactWrapper.ContactBox>
             <Image 
               alt='Icone de email'
               src={Email}
               height={30}
               width={30}
             />
-            <ContactTyp>
-              emaildeContato@gmail.com
-            </ContactTyp>
-          </ContactBox>
-          <ContactBox>
+            <ContactWrapper.ContactTyp>
+              jeni@jenipetsitter.com
+            </ContactWrapper.ContactTyp>
+          </ContactWrapper.ContactBox>
+          <ContactWrapper.ContactBox>
             <a href="https://wa.me/5511992673254" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-whatsapp fa-2x" style={{color: theme.palette.secondary.main }}
               ></i>
             </a>
-            <ContactTyp>
+            <ContactWrapper.ContactTyp>
               (11) 99267-3254
-            </ContactTyp>
-          </ContactBox>
-          <ContactBox>
+            </ContactWrapper.ContactTyp>
+          </ContactWrapper.ContactBox>
+          <ContactWrapper.ContactBox>
             <a href="https://www.instagram.com/jenipetsitter/">
               <i class="fa-brands fa-instagram fa-2x" style={{color: theme.palette.secondary.main }}></i>
             </a>
-            <ContactTyp>
+            <ContactWrapper.ContactTyp>
               jenipetsitter
-            </ContactTyp>
-          </ContactBox>
-          <ContactBox>
+            </ContactWrapper.ContactTyp>
+          </ContactWrapper.ContactBox>
+          <ContactWrapper.ContactBox>
             <i class="fa-solid fa-location-dot fa-2x" style={{color: theme.palette.secondary.main}}></i>
-            <ContactTyp>
+            <ContactWrapper.ContactTyp>
               Jundiaí
-            </ContactTyp>
-          </ContactBox>
+            </ContactWrapper.ContactTyp>
+          </ContactWrapper.ContactBox>
         </Grid>
       </MiddleGrid>
     </>

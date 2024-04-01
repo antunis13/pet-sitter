@@ -14,7 +14,9 @@ const validationSchema = object({
     message: string().required('Campo obrigatório')
 }) 
 
-export  {
+const formValuesWrapper = {
     initialValues,
     validationSchema
 }
+
+export default formValuesWrapper

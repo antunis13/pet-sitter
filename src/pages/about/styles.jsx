@@ -93,7 +93,7 @@ const PinkTyp = styled(Typography)(({theme}) =>({
 }))
 
 
-export{
+const AboutWrapper = {
     ImageEffect,
     WaveImg,
     GridAbout,
@@ -105,3 +105,5 @@ export{
     StyledTyp,
     StyledBox,
 }
+
+export default AboutWrapper
