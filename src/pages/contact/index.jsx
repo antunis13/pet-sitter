@@ -9,7 +9,7 @@ import {
 
 import axios from "axios"
 import { Formik } from "formik"
-import formValuesWrapper from "./formValues"
+import formValuesWrapper from "../../utils/formValues"
 
 import BackgroundGrid from "@/components/BackgroundGrid"
 import MiddleGrid from "@/components/MiddleGrid"
@@ -19,7 +19,7 @@ import useToasty from '../../contexts/Toasty'
 import Background from '../../public/images/Portfolio_Jeni08.jpg'
 import Email from '../../public/images/mail.png'
 
-import ContactWrapper from "./styles"
+import ContactWrapper from "../../styles/contact.styles"
 
 import { useTheme } from "@mui/material/styles"
 

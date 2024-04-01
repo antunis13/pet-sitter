@@ -8,7 +8,7 @@ import MiddleGrid from "@/components/MiddleGrid"
 import Background from '../../public/images/Avatar_Jeni1.jpg'
 import PetSitterService from '../../public/images/veterinary.png'
 
-import ServicesWrapper from "./styles"
+import ServicesWrapper from "../../styles/services.styles"
 
 const PetSitter = () =>{
     return(

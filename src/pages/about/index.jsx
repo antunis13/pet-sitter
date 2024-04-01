@@ -11,7 +11,7 @@ import Background from '../../public/images/Portfolio_Jeni06.jpg'
 import Efeito1 from '../../public/images/pawprint.png'
 import Wave from '../../public/images/wave.svg'
 
-import AboutWrapper from "./styles"
+import AboutWrapper from "../../styles/about.styles"
 
 const About = () => {
   return (

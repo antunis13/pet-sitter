@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material"
 
 import { styled } from "@mui/material/styles"
-import SCWrapper from "../contact/styles"
+
 
 const GridImage = styled(Grid)`
   margin-left: 40px;
