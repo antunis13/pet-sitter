@@ -112,7 +112,7 @@ const Footer = () =>{
                             <ContactBox>
                                 <i class="fa-regular fa-envelope fa-2x" style={{color: theme.palette.primary.main}}></i>
                                 <ContactTyp variant='h6'>
-                                    emaildeContato@gmail.com
+                                    jeni@jenipetsitter.com
                                 </ContactTyp>
                             </ContactBox>
                     </Grid>
