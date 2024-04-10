@@ -13,11 +13,11 @@ import ServicesWrapper from "../../styles/services.styles"
 const JeniSpace = () => {
     return(
         <>
-            <Grid container>
-                <BackgroundGrid
-                    image={Background}
-                />
-            </Grid> 
+          
+            <BackgroundGrid
+                image={Background}
+            />
+            
             <MiddleGrid container rowSpacing={4}>
                 <Grid item xs={12}>
                     <Typography variant="h3">Espaço Jeni</Typography>

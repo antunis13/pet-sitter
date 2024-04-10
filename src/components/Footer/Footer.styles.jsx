@@ -1,12 +1,12 @@
 
-import Image from 'next/image'
-
 import { 
     Box, 
     Container, 
     Grid, 
     Typography, 
-    Paper 
+    Paper,
+    ListItemText,
+    ListItem
 } from "@mui/material"
 
 import {styled} from '@mui/material/styles'
@@ -30,34 +30,38 @@ const GridLinks = styled(Grid)({
     flexWrap: 'nowrap'
 })
 
+const VerticalGrid = styled(Grid)({
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+})
+
+const StyledListItem = styled(ListItem)({
+    textAlign: 'center',
+})
+
+const StyledListItemTxt = styled(ListItemText)`
+    color: ${(props) => props.theme.palette.primary.main};
+    transition: ease 500ms;
+    &:hover{
+        color: ${(props) => props.theme.palette.primary.pink};
+    }
+
+`
+
 const ContainerFot = styled(Container)`
     display: flex;
     justify-content: 'center';
     align-self: 'center';
+    margin-top: 20px;
     
 `
 
-const ImageLogo = styled(Image)`
-    width: 150px;
-    height: 150px;
-
-    @media(max-width: 780px){
-        width: 300px;
-        height: 300px;
-        margin-top: 30px;
-        margin-left: 35px;
-    }
-
-    @media(max-width: 360px){
-        width: 230px;
-        height: 230px;
-        margin-top: 40px;
-        margin-left: 25px;
-    }
-    
-`
 
 const TypographyStyle = styled(Typography)`
+    color: ${(props) => props.theme.palette.primary.main};
+    transition: ease 500ms;
+
     &:hover{
         color:  ${(props) => props.theme.palette.primary.pink};
     }
@@ -78,8 +82,10 @@ export{
     StyledPaper,
     GridLinks,
     ContainerFot,
-    ImageLogo,
     TypographyStyle,
     ContactBox,
-    ContactTyp
+    ContactTyp,
+    VerticalGrid,
+    StyledListItem,
+    StyledListItemTxt,
 }

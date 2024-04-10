@@ -13,11 +13,11 @@ import ServicesWrapper from "../../styles/services.styles"
 const PetSitter = () =>{
     return(
         <>
-            <Grid container>
-                <BackgroundGrid
-                    image={Background}
-                />
-            </Grid> 
+           
+            <BackgroundGrid
+                image={Background}
+            />
+          
             <MiddleGrid 
                 container 
                 rowSpacing={4} 

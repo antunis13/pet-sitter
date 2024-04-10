@@ -1,8 +1,11 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { 
     Box, 
-    Grid, 
+    Grid,
+    List,
+    Divider,
 } from "@mui/material"
 
 import logoJeni from '../../public/images/Logotipo_Jeni-18.png'
@@ -13,10 +16,12 @@ import {
     StyledPaper,
     GridLinks,
     ContainerFot,
-    ImageLogo,
     TypographyStyle,
     ContactBox,
-    ContactTyp
+    ContactTyp,
+    VerticalGrid,
+    StyledListItemTxt,
+    StyledListItem
 } from './Footer.styles'
 
 import style from '../Components.module.css'
@@ -32,10 +37,13 @@ const Footer = () =>{
                     display='block'
                 >
                     <Grid item xs={2} sm={2} md={2} lg={2} xl={3} >                   
-                        <ImageLogo
-                            alt='Logo'
-                            src={logoJeni}
-                        />
+                        <Link href='/' passHref>
+                            <Image
+                                alt='Logo'
+                                src={logoJeni}
+                                className={style.imageLogo}
+                            />
+                        </Link>
                     </Grid>
               
                 </Grid>
@@ -47,41 +55,67 @@ const Footer = () =>{
                         alignContent='center'
                         className={style.pagesLinks}
                     >
+                       <VerticalGrid item xs={6} sm={2} md={2} lg={2} xl={3}>
+                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} >
+                                <Box textAlign='center'>
+                                <Link href='/' passHref>
+                                        <TypographyStyle variant='subtitle1'>
+                                            Home
+                                        </TypographyStyle>
+                                </Link>  
+                                </Box>
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12} >
+                                <Box textAlign='center'>
+                                <Link href='/about' passHref>
+                                    <TypographyStyle variant='subtitle1'>
+                                        Sobre nós
+                                    </TypographyStyle>
+                                </Link>  
+                                </Box>
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                                <Box textAlign='center'>
+                                <Link href='/contact' passHref>
+                                    <TypographyStyle variant='subtitle1'>       
+                                        Contato
+                                    </TypographyStyle>
+                                </Link>  
+                                </Box>
+                            </Grid>
+                        </VerticalGrid> 
                           
                         <Grid item xs={6} sm={2} md={2} lg={2} xl={3} >
                             <Box textAlign='center'>
-                            <Link href='/' passHref>
-                                    <TypographyStyle variant='subtitle1' color='primary.main'>
-                                        Home
-                                    </TypographyStyle>
-                            </Link>  
-                            </Box>
-                        </Grid>
-                        <Grid item xs={6} sm={2} md={2} lg={2} xl={3} >
-                            <Box textAlign='center'>
-                            <Link href='/about' passHref>
-                                <TypographyStyle variant='subtitle1' color='primary.main'>
-                                    Sobre nós
-                                </TypographyStyle>
-                            </Link>  
-                            </Box>
-                        </Grid>
-                        <Grid item xs={6} sm={2} md={2} lg={2} xl={3} >
-                            <Box textAlign='center'>
-                            <Link href='/services' passHref>
-                                <TypographyStyle variant='subtitle1' color='primary.main'>  
+                                <TypographyStyle variant='subtitle1'>  
                                     Serviços
                                 </TypographyStyle>
-                            </Link>  
-                            </Box>
-                        </Grid>
-                        <Grid item xs={6} sm={2} md={2} lg={2} xl={3}>
-                            <Box textAlign='center'>
-                            <Link href='/contact' passHref>
-                                <TypographyStyle variant='subtitle1' color='primary.main'>       
-                                    Contato
-                                </TypographyStyle>
-                            </Link>  
+                                <Divider color='white' />
+                                <List>
+                                    <Link href='/services/dayCare' passHref>
+                                        <StyledListItem>
+                                                <StyledListItemTxt
+                                                primary="Day Care"
+                                                /> 
+                                        </StyledListItem>
+                                    </Link>
+                                    <Link href='/services/dogWalk' passHref>
+                                        <StyledListItem>
+                                                <StyledListItemTxt
+                                                    primary="Dog Walk"
+                                                />
+                                        </StyledListItem>
+                                    </Link>
+                                    <Link href='/services/petSitter' passHref>
+                                        <StyledListItem>
+                                                <StyledListItemTxt
+                                                    primary="Pet Sitter"
+                                                />
+                                        </StyledListItem>
+                                    </Link>
+                                </List>
+                                
+                            
                             </Box>
                         </Grid>
                     </Grid>
