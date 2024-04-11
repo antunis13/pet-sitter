@@ -7,7 +7,7 @@ import{
     Menu,
     MenuItem,
     Button,
-    Divider
+    Divider,
 } from '@mui/material' 
 
 import MenuHamburguer from '../MenuHamburguer'
@@ -20,6 +20,7 @@ import {
     TypographyStyle,
     GridPages,
     LinkMenu,
+    TypographyService,
 } from './Header.styles'
 
 import style from '../Components.module.css'
@@ -47,7 +48,7 @@ const Header = () => {
                     >
                         <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={2}>
                             <Link href="/">
-                                <TypographyStyle variant="h6" component="div" color='primary.pink'>
+                                <TypographyStyle variant="h6" component="div">
                                     Home
                                 </TypographyStyle>
                             </Link>
@@ -55,7 +56,7 @@ const Header = () => {
                 
                         <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={2}>
                             <Link href="/about">
-                                <TypographyStyle variant="h6" component="div" color='primary.pink'>
+                                <TypographyStyle variant="h6" component="div">
                                     Sobre nós
                                 </TypographyStyle>
                             </Link>
@@ -82,9 +83,9 @@ const Header = () => {
                                 onMouseEnter={handleMouseEnter}
                                 style={{textTransform: 'none', color: openMenu ? '#174071' : '#ed7a8c' }}
                             >     
-                                <TypographyStyle variant="h6" component="div" color={openMenu ? '#174071': 'primary.pink'}>
+                                <TypographyService variant="h6" component="div" color={openMenu ? '#174071': 'primary.pink'}>
                                     Serviços       
-                                </TypographyStyle>
+                                </TypographyService>
                                 <i 
                                     class="fa-solid fa-angle-down fa-sm" 
                                     style={{
@@ -132,7 +133,7 @@ const Header = () => {
 
                         <GridPages item className={style.menuNormal} sm={2} md={2} lg={2} xl={2}>  
                             <Link href="/contact">
-                                <TypographyStyle variant="h6" component="div" color='primary.pink'>
+                                <TypographyStyle variant="h6" component="div">
                                     Contato
                                 </TypographyStyle>
                             </Link>

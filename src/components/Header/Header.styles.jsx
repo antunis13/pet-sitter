@@ -20,9 +20,15 @@ const HeaderAppBar = styled(AppBar)({
 })
 
 const TypographyStyle = styled(Typography)`
+    color:  ${(props) => props.theme.palette.primary.pink};
+    transition: ease 500ms;
     &:hover{
         color:  ${(props) => props.theme.palette.secondary.main};
     }
+`
+
+const TypographyService = styled(Typography)`
+    transition: ease 500ms;
 `
 const GridPages = styled(Grid)({
     display: 'flex',
@@ -41,4 +47,5 @@ export {
     TypographyStyle,
     GridPages,
     LinkMenu,
+    TypographyService
 }
