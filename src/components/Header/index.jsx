@@ -12,7 +12,7 @@ import {
 
 import MenuHamburguer from "../MenuHamburguer";
 
-import logo from "../../public/images/Logotipo_Jeni-14.png";
+import logo from "../../../public/images/Logotipo_Jeni-14.png";
 
 import {
   HeaderGrid,

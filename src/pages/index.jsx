@@ -7,13 +7,15 @@ import BackgroundGrid from "@/components/BackgroundGrid";
 
 import Carousel from "react-material-ui-carousel";
 
-import Background from "../public/images/homeBackground2.webp";
-import DayCare from "../public/images/dog-food.png";
-import DogWalk from "../public/images/dog.png";
-import PetSitter from "../public/images/veterinary.png";
-import Barto from "../public/images/Barto.png";
-import Zara from "../public/images/zara.png";
-import Mel from "../public/images/Mel.png";
+import {
+  Background,
+  DayCare,
+  DogWalk,
+  PetSitter,
+  Barto,
+  Zara,
+  Mel,
+} from "../../public/images";
 
 import HomeWrapper from "../styles/home.styles";
 

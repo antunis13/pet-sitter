@@ -3,25 +3,28 @@ import { Typography, Grid, Container } from "@mui/material";
 import BackgroundGrid from "@/components/BackgroundGrid";
 import MiddleGrid from "@/components/MiddleGrid";
 
-import Background from "../../public/images/dogsBackground.jpg";
-import Efeito1 from "../../public/images/pawprint.png";
+import { BackgroundAbout, PawPrint } from "../../../public/images";
 
 import AboutWrapper from "../../styles/about.styles";
 
 const About = () => {
   return (
     <>
-      <BackgroundGrid image={Background} width={12} />
+      <BackgroundGrid image={BackgroundAbout} width={12} />
 
       <MiddleGrid container>
         <Grid item xs={12}>
-          <AboutWrapper.TitleTypography variant="h2" color="primary.pink">
+          <AboutWrapper.TitleTypography
+            variant="h2"
+            color="primary.pink"
+            fontWeight="bold"
+          >
             Nosso objetivo
           </AboutWrapper.TitleTypography>
         </Grid>
         <Grid
           item
-          xs={10}
+          xs={12}
           sm={7}
           md={7}
           lg={8}
@@ -34,29 +37,31 @@ const About = () => {
             A marca Jeni nasceu através <br /> de muito amor por animais, com a
             missão de
           </AboutWrapper.TxtTypography>
-          <AboutWrapper.StyledBox>
-            <AboutWrapper.PinkTyp variant="h2" lineHeight={1}>
-              proporcionar qualidade de vida
-            </AboutWrapper.PinkTyp>
-            <Typography
-              variant="h4"
-              width={190}
-              color="secondary.main"
-              lineHeight={1}
-              position="relative"
-              left={130}
-              bottom={50}
-            >
-              e amor para os pets.
-            </Typography>
-          </AboutWrapper.StyledBox>
+          <Grid xs={10} sm={11} md={12} lg={12} xl={12}>
+            <AboutWrapper.StyledBox>
+              <AboutWrapper.PinkTyp variant="h2" lineHeight={1}>
+                proporcionar qualidade de vida
+              </AboutWrapper.PinkTyp>
+              <Typography
+                variant="h4"
+                width={190}
+                color="secondary.main"
+                lineHeight={1}
+                position="relative"
+                left={200}
+                bottom={50}
+              >
+                e amor para os pets.
+              </Typography>
+            </AboutWrapper.StyledBox>
+          </Grid>
         </Grid>
 
         <Grid item margin="0px 0 30px 0px" xs={10} sm={6} md={7} lg={8} xl={7}>
           <AboutWrapper.StyledTyp
             variant="h5"
             color="secondary.main"
-            textAlign="left"
+            textAlign="center"
           >
             Nosso propósito é permitir que as famílias viajem tranquilas,
             sabendo que seus pets estão em ótimas mãos, com atendimento
@@ -84,7 +89,7 @@ const About = () => {
             <Grid item display="flex">
               <AboutWrapper.ImageEffect
                 alt="Logotipo"
-                src={Efeito1}
+                src={PawPrint}
                 width={35}
                 height={35}
               />
@@ -97,7 +102,7 @@ const About = () => {
             <Grid item display="flex">
               <AboutWrapper.ImageEffect
                 alt="Logotipo"
-                src={Efeito1}
+                src={PawPrint}
                 width={35}
                 height={35}
               />
@@ -110,7 +115,7 @@ const About = () => {
             <Grid item display="flex">
               <AboutWrapper.ImageEffect
                 alt="Logotipo"
-                src={Efeito1}
+                src={PawPrint}
                 width={35}
                 height={35}
               />
@@ -123,7 +128,7 @@ const About = () => {
             <Grid item display="flex">
               <AboutWrapper.ImageEffect
                 alt="Logotipo"
-                src={Efeito1}
+                src={PawPrint}
                 width={35}
                 height={35}
               />
@@ -135,7 +140,7 @@ const About = () => {
             <Grid item display="flex">
               <AboutWrapper.ImageEffect
                 alt="Logotipo"
-                src={Efeito1}
+                src={PawPrint}
                 width={35}
                 height={35}
               />

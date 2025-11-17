@@ -1,24 +1,23 @@
-import localFont from 'next/font/local'
-import { ThemeProvider } from '@emotion/react'
-import { ToastyProvider } from '../contexts/Toasty'
-import theme from '@/theme'
+import { ThemeProvider } from "@emotion/react";
+import { ParallaxProvider } from "react-scroll-parallax";
+import { ToastyProvider } from "../contexts/Toasty";
+import theme from "@/theme";
 
-import TemplateDefault from '../templates/Default'
-import '../styles/index.css'
-
-const PrincipalFont = localFont({src: '../fonts/Garet-Book.ttf'})
+import TemplateDefault from "../templates/Default";
+import "../styles/index.css";
 
 export default function App({ Component, pageProps }) {
-  return(
+  return (
     <ThemeProvider theme={theme}>
       <ToastyProvider>
-        <TemplateDefault>
-          <main className={PrincipalFont.className}
-          >
-            <Component {...pageProps} />
-          </main>
-        </TemplateDefault>
+        <ParallaxProvider>
+          <TemplateDefault>
+            <main>
+              <Component {...pageProps} />
+            </main>
+          </TemplateDefault>
+        </ParallaxProvider>
       </ToastyProvider>
     </ThemeProvider>
-  ) 
+  );
 }

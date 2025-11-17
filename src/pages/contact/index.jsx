@@ -16,8 +16,7 @@ import MiddleGrid from "@/components/MiddleGrid";
 
 import useToasty from "../../contexts/Toasty";
 
-import Background from "../../public/images/contactPage.png";
-import Email from "../../public/images/mail.png";
+import { BackgroundContact, Email } from "../../../public/images";
 
 import ContactWrapper from "../../styles/contact.styles";
 
@@ -49,7 +48,7 @@ const Contact = () => {
   };
   return (
     <>
-      <BackgroundGrid image={Background} width={12} />
+      <BackgroundGrid image={BackgroundContact} width={12} />
       <MiddleGrid container columnGap={20}>
         <Grid item xs={12} marginBottom={5} padding={3}>
           <Typography variant="h3" color="primary.pink">
