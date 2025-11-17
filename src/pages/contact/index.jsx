@@ -16,7 +16,7 @@ import MiddleGrid from "@/components/MiddleGrid";
 
 import useToasty from "../../contexts/Toasty";
 
-import Background from "../../public/images/Portfolio_Jeni08.jpg";
+import Background from "../../public/images/contactPage.png";
 import Email from "../../public/images/mail.png";
 
 import ContactWrapper from "../../styles/contact.styles";
@@ -49,10 +49,10 @@ const Contact = () => {
   };
   return (
     <>
-      <BackgroundGrid image={Background} width={8} />
+      <BackgroundGrid image={Background} width={12} />
       <MiddleGrid container columnGap={20}>
         <Grid item xs={12} marginBottom={5} padding={3}>
-          <Typography variant="h4" color="primary.pink">
+          <Typography variant="h3" color="primary.pink">
             Entre em contato com a gente
           </Typography>
         </Grid>
@@ -67,7 +67,6 @@ const Contact = () => {
                 <form onSubmit={handleSubmit}>
                   <ContactWrapper.FormBox>
                     <ContactWrapper.FormDiv>
-                      <Typography>Nome Completo</Typography>
                       <TextField
                         id="outlined-basic"
                         label="Nome Completo"
@@ -81,7 +80,6 @@ const Contact = () => {
                       />
                     </ContactWrapper.FormDiv>
                     <ContactWrapper.FormDiv>
-                      <Typography>E-mail</Typography>
                       <TextField
                         id="outlined-basic"
                         label="E-mail"
@@ -95,7 +93,6 @@ const Contact = () => {
                       />
                     </ContactWrapper.FormDiv>
                     <ContactWrapper.FormDiv>
-                      <Typography>Telefone</Typography>
                       <TextField
                         id="outlined-basic"
                         label="Telefone"
@@ -109,7 +106,6 @@ const Contact = () => {
                       />
                     </ContactWrapper.FormDiv>
                     <ContactWrapper.FormDiv>
-                      <Typography>Mensagem</Typography>
                       <TextField
                         id="outlined-basic"
                         label="Mensagem"
@@ -143,7 +139,7 @@ const Contact = () => {
             }}
           </Formik>
         </ContactWrapper.GridForm>
-        <Grid item xs={10} sm={9} md={6} lg={3} xl={3}>
+        <Grid item xs={10} sm={9} md={6} lg={3} xl={3} sx={{ mt: 2 }}>
           <ContactWrapper.ContactBox>
             <Image alt="Icone de email" src={Email} height={30} width={30} />
             <ContactWrapper.ContactTyp>

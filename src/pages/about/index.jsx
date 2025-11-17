@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Typography, Grid, Container } from "@mui/material";
 
 import BackgroundGrid from "@/components/BackgroundGrid";
@@ -6,7 +5,6 @@ import MiddleGrid from "@/components/MiddleGrid";
 
 import Background from "../../public/images/dogsBackground.jpg";
 import Efeito1 from "../../public/images/pawprint.png";
-import Wave from "../../public/images/wave.svg";
 
 import AboutWrapper from "../../styles/about.styles";
 
@@ -150,85 +148,6 @@ const About = () => {
           </Grid>
         </Container>
       </Grid>
-
-      <AboutWrapper.GridAbout container>
-        <Grid item xs={12}>
-          <Typography variant="h3" color="primary.pink">
-            Conheça o time Jeni
-          </Typography>
-        </Grid>
-
-        <AboutWrapper.BoxAbout item xs={10} sm={9} md={6} lg={3} xl={3}>
-          <AboutWrapper.WaveImg alt="efeito" src={Wave} height={121} />
-          <Typography variant="h4" color="primary.main">
-            Jeni
-          </Typography>
-          <Image alt="Foto da Jeni" />
-          <Typography variant="h5" color="primary.main">
-            CEO
-          </Typography>
-          <AboutWrapper.TypographyAbout variant="h6">
-            Formada em auxiliar veterinária.
-            <br />
-            Mais de 8 anos de experiência em cuidados de pets.
-            <br />
-            Experiência em clínica médica de pequenos animais.
-            <br />
-            Estudante de Medicina Veterinária.
-            <br />
-            Amante de animais.
-            <br />
-          </AboutWrapper.TypographyAbout>
-        </AboutWrapper.BoxAbout>
-
-        <AboutWrapper.BoxAbout item xs={10} sm={9} md={6} lg={3} xl={3}>
-          <AboutWrapper.WaveImg alt="efeito" src={Wave} height={121} />
-          <Typography variant="h4" color="primary.main">
-            Debora
-          </Typography>
-          <Image alt="Foto da Debora" />
-          <Typography variant="h5" color="primary.main">
-            Pet Sitter & Dog Walker
-          </Typography>
-          <AboutWrapper.TypographyAbout variant="h6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
-            at, ipsam illum delectus sequi qui unde quas odio animi consequuntur
-            doloremque? Nobis doloribus natus quidem, consequatur sed debitis
-            accusantium ratione. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Quidem veritatis minima recusandae perspiciatis
-            amet facilis rerum provident praesentium harum! Porro quas quae
-            ipsum delectus iure hic in, mollitia quasi exercitationem! Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Architecto
-            doloribus nemo quas esse illo facere quia exercitationem, velit sint
-            pariatur voluptatibus dolorem laboriosam inventore autem. Itaque
-            praesentium sed a quia?
-          </AboutWrapper.TypographyAbout>
-        </AboutWrapper.BoxAbout>
-
-        <AboutWrapper.BoxAbout item xs={10} sm={9} md={6} lg={3} xl={3}>
-          <AboutWrapper.WaveImg alt="efeito" src={Wave} height={121} />
-          <Typography variant="h4" color="primary.main">
-            Tati
-          </Typography>
-          <Image alt="Foto da Tati" />
-          <Typography variant="h5" color="primary.main">
-            Pet Sitter & Dog Walker
-          </Typography>
-          <AboutWrapper.TypographyAbout variant="h6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
-            at, ipsam illum delectus sequi qui unde quas odio animi consequuntur
-            doloremque? Nobis doloribus natus quidem, consequatur sed debitis
-            accusantium ratione. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Quidem veritatis minima recusandae perspiciatis
-            amet facilis rerum provident praesentium harum! Porro quas quae
-            ipsum delectus iure hic in, mollitia quasi exercitationem! Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Architecto
-            doloribus nemo quas esse illo facere quia exercitationem, velit sint
-            pariatur voluptatibus dolorem laboriosam inventore autem. Itaque
-            praesentium sed a quia?
-          </AboutWrapper.TypographyAbout>
-        </AboutWrapper.BoxAbout>
-      </AboutWrapper.GridAbout>
     </>
   );
 };

@@ -1,19 +1,18 @@
 import Image from "next/image";
-import Head from "next/head";
 import Link from "next/link";
 import { Grid, Typography, Avatar } from "@mui/material";
 
-import BackgroundGrid from "@/components/BackgroundGrid";
 import MiddleGrid from "@/components/MiddleGrid";
+import BackgroundGrid from "@/components/BackgroundGrid";
 
 import Carousel from "react-material-ui-carousel";
 
-import Background from "../public/images/Portfolio_Jeni07.jpg";
+import Background from "../public/images/homeBackground2.webp";
 import DayCare from "../public/images/dog-food.png";
 import DogWalk from "../public/images/dog.png";
 import PetSitter from "../public/images/veterinary.png";
 import Barto from "../public/images/Barto.png";
-import Dolinha from "../public/images/Dolinha.png";
+import Zara from "../public/images/zara.png";
 import Mel from "../public/images/Mel.png";
 
 import HomeWrapper from "../styles/home.styles";
@@ -26,23 +25,24 @@ const Home = () => {
     {
       name: "Bartô",
       image: Barto,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      text: "Barth não gosta de sair de casa, aqui é o espaço dele, onde tem sua rotina mantida. Jeni fez toda a diferença quando precisei me ausentar e não quis stressa lo. Ela cuidou muito bem, superou minhas expectativas com mimos, me tranquilizou com fotos e vídeos e para minha maior surpresa ajustou seus horários aos dele. Estou saindo de viagem novamente e tranquila pois sei que meu pequeno está sob os melhores cuidados. Gratidão Jenifer",
     },
     {
-      name: "Dorinha",
-      image: Dolinha,
-      text: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      name: "Zara",
+      image: Zara,
+      text: "A Jeniffer é uma benção na minha vida! Cuida da Zarinha desde quando ela tinha 2 meses! Ela tem um amor e cuidado pelos animais que eu não consigo explicar! Confio de olhos fechados ❤️❤️❤️",
     },
     {
       name: "Mel",
       image: Mel,
-      text: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      text: "Super responsável com horário, carinhosa e atenciosa.",
     },
   ];
 
   return (
     <>
-      <BackgroundGrid image={Background} width={8} />
+      <BackgroundGrid image={Background} width={12} />
+
       <MiddleGrid>
         <Grid
           item
@@ -58,23 +58,28 @@ const Home = () => {
           <HomeWrapper.TxtTypography color="secondary.main" variant="h4">
             Na Jeni, cada detalhe é <br /> cuidadosamente planejado para
           </HomeWrapper.TxtTypography>
-          <HomeWrapper.StyledBox>
-            <HomeWrapper.VerticalTyp variant="h4">uma</HomeWrapper.VerticalTyp>
-            <HomeWrapper.PinkTyp
-              variant="h2"
-              color="primary.pink"
-              lineHeight={1}
-            >
-              proporcionar experiência única
-            </HomeWrapper.PinkTyp>
-            <HomeWrapper.TxtTypography2
-              variant="h4"
-              color="secondary.main"
-              lineHeight={1}
-            >
-              para você e seu pet
-            </HomeWrapper.TxtTypography2>
-          </HomeWrapper.StyledBox>
+
+          <Grid xs={12} sm={11} md={12} lg={12} xl={12}>
+            <HomeWrapper.StyledBox>
+              <HomeWrapper.VerticalTyp variant="h4">
+                uma
+              </HomeWrapper.VerticalTyp>
+              <HomeWrapper.PinkTyp
+                variant="h2"
+                color="primary.pink"
+                lineHeight={1}
+              >
+                proporcionar experiência única
+              </HomeWrapper.PinkTyp>
+              <HomeWrapper.TxtTypography2
+                variant="h4"
+                color="secondary.main"
+                lineHeight={1}
+              >
+                para você e seu pet
+              </HomeWrapper.TxtTypography2>
+            </HomeWrapper.StyledBox>
+          </Grid>
         </Grid>
         <Grid item xs={12} sm={11} md={12} lg={12} xl={12}>
           <HomeWrapper.TitleTypography color="primary.pink" variant="h2">
