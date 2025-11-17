@@ -5,12 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <title>Jeni Pet Sitter</title>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        ></link>
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link

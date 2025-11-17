@@ -1,34 +1,26 @@
-import nodemailer from 'nodemailer';
+import { EmailTemplate } from "../../components/EmailTemplate";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
-  if (req.method === 'POST') {
-    const { name, email, tel, message } = req.body 
+  if (req.method !== "POST") {
+    return res.status(405).json({ message: "Método não permitido" });
+  }
 
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: 'richardantunis4@gmail.com',
-        pass: 'qjavgnuowyabvnok',
-      },
-    })  
+  const { name, email, tel, message } = req.body;
 
-    const mailOptions = {
-      from: 'richardantunis4@gmail.com',
-      to: 'richardantunis4@gmail.com',
-      subject: 'Contato do site',
-      text: `Nome: ${name}\nEmail: ${email}\nTelefone: ${tel}\nMensagem: ${message}`,
-    } 
+  try {
+    const response = await resend.emails.send({
+      from: "Site <onboarding@resend.dev>",
+      to: ["richardantunis4@gmail.com"],
+      subject: "Contato do Site",
+      react: EmailTemplate({ name, email, tel, message }),
+    });
 
-    try {
-      const info = await transporter.sendMail(mailOptions) 
-      res.status(200).json({ message: 'Email enviado com sucesso', info }) 
-    } catch (error) {
-      console.error('Erro ao enviar o email:', error) 
-      res.status(500).json({ message: 'Erro ao enviar o email' }) 
-    }
-  } else {
-    res.status(405).json({ message: 'Método não permitido' }) 
+    return res.status(200).json({ message: "Email enviado", response });
+  } catch (error) {
+    console.error("Erro ao enviar email:", error);
+    return res.status(500).json({ error: "Erro ao enviar email" });
   }
 }
